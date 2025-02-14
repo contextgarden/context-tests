@@ -1,0 +1,21 @@
+\starttext
+
+    A\index{A} B \page
+
+    <A
+    \startregister [index] [A] {A}
+        <B
+        \startregister [index] [B] {B}
+
+            \dorecurse {10} {\input tufte}
+
+        A>
+        \stopregister [index] [A]
+    B>
+    \stopregister [index] [B]
+
+\page
+
+\placeregister[index]
+
+\stoptext

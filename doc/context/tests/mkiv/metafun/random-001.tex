@@ -1,0 +1,24 @@
+% example by MS
+
+\continuewhenlmtxmode
+
+\startMPpage[offset=1dk]
+    randomseed := 10 ;
+    vardef Test (expr pth) =
+        image (
+            save p ; path p ;
+            draw pth withcolor darkyellow ;
+            drawcontrollines pth withpen pencircle scaled 0.1 withcolor darkred;
+            p := pth randomizedcontrols 10 ;
+            draw p withcolor darkblue ;
+            drawcontrollines p withpen pencircle scaled 0.1 withcolor "orange";
+            p := pth randomrotatedcontrols 90 ;
+            draw p withcolor darkred ;
+            drawcontrollines p withpen pencircle scaled 0.1 withcolor "orange";
+        )
+    enddef ;
+
+    draw Test(fullcircle xyscaled (150,100))               yshifted -  0;
+    draw Test(halfcircle xyscaled (150,100))               yshifted -150;
+    draw Test(((0,0) -- (50,100) -- (100,0) -- (150,100))) yshifted -300;
+\stopMPpage

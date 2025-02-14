@@ -1,0 +1,25 @@
+\startluacode
+    local demo = {
+        name    = "demo",
+        options = {
+            {
+                substitutions = {
+                    th = "t|h",
+                    Th = "T|h",
+                    st = "s|t",
+                    St = "S|t",
+                    fi = "f|i",
+                },
+            },
+        },
+    }
+    table.save("oeps-fixes.llg",demo)
+\stopluacode
+
+\setuplanguage[en][goodies={oeps-fixes.llg}]
+
+\setupbodyfont[ebgaramond]
+
+\starttext
+    The This These fiets and thisthis thisfiets
+\stoptext

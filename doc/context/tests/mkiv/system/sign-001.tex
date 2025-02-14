@@ -1,0 +1,20 @@
+\continuewhenlmtxmode
+
+\setupinteraction[state=start]
+
+\definefield[signature][signed]
+
+\starttext
+
+    \defineoverlay[signature][my signature]
+
+    \startTEXpage[offset=1ts]
+        sign: \inframed
+          [background=signature]
+          {\fieldbody[signature][width=3cm,option=hidden]}
+    \stopTEXpage
+
+\stoptext
+
+% mtxrun --script pdf --sign   --certificate=sign-001.pem --password=test --uselibrary sign-001
+% mtxrun --script pdf --verify --certificate=sign-001.pem --password=test --uselibrary sign-001

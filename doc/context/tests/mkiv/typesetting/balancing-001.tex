@@ -1,0 +1,70 @@
+\continuewhenlmtxmode
+
+\useMPlibrary[dum]
+
+\setupbodyfont[10pt]
+
+% \tracingmvl    1
+% \tracingonline 2
+
+\starttext
+
+\definebalancing
+  [demo]
+
+\setupbalancing
+  [demo]
+  [align={tolerant,stretch},
+   setups=MyBalance,
+   after=\page]
+
+\startbalancing[demo][1]
+    \dorecurse {10} {
+        \samplefile{tufte}\par
+        \startlinecorrection
+            \externalfigure[dummy]
+        \stoplinecorrection
+        \samplefile{ward}\par
+    }%
+\stopbalancing
+
+\startbalancing[demo][1]
+    \dorecurse {5} {
+        \blank
+        TEST TEST TEST TEST
+        \blank
+        \samplefile{knuthmath}
+    }%
+\stopbalancing
+
+\startbalancing[demo][2]
+    \dorecurse {12} {
+        \samplefile{ward}\par
+        \startlinecorrection
+            \externalfigure[dummy]
+        \stoplinecorrection
+        \samplefile{davis}\par
+    }%
+\stopbalancing
+
+\startsetups MyBalance
+   \balancetolerance        2000
+   \balanceemergencystretch 2\lineheight
+   \balancebottomskip       0pt plus 2\lineheight
+   \balancevsize            30\lineheight
+%    \balanceshape 2
+%       height \dimexpr\pagegoal-\pagetotal-2\lineheight\relax % use new thing
+%     next
+%       height \textheight
+%     \relax
+\stopsetups
+
+\showframe
+
+\starttitle[title=Does it work?]
+
+    \placebalancing[demo] [setups=MyBalance]
+
+\stoptitle
+
+\stoptext

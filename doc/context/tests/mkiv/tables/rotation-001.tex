@@ -1,0 +1,46 @@
+% answer by WS on the mailing list
+
+\startuseMPgraphic{tableheader}{text,rotation}
+
+  label.lft("\strut\bf\MPvar{text}",origin)
+    rotated \MPvar{rotation}
+    shifted (\the\strutht,0);
+
+  setbounds currentpicture to unitsquare
+    xyscaled (\the\struttotal,sin(\MPvar{rotation})*\the\widthofstring{\MPvar{text}});
+
+\stopuseMPgraphic
+
+\starttext
+
+\bTABLE[frame=off]
+  \bTR[align={middle,low}]
+    \bTH \eTH
+    \bTH[width=3em] \dontleavehmode\useMPgraphic{tableheader}{text=Water buffalo,rotation=315} \eTH
+    \bTH[width=3em] \dontleavehmode\useMPgraphic{tableheader}{text=Mexican redknee tarantula,rotation=315} \eTH
+    \bTH[width=3em] \dontleavehmode\useMPgraphic{tableheader}{text=European turtle dove,rotation=315} \eTH
+  \eTR
+  \bTR[topframe=on,align=middle]
+    \bTD Amount of legs \eTD
+    \bTD 4 \eTD
+    \bTD 8 \eTD
+    \bTD 2 \eTD
+  \eTR
+\eTABLE
+
+\bTABLE[frame=off]
+  \bTR[align={middle,low}]
+    \bTH \eTH
+    \bTH \dontleavehmode\kern1.5em\llap{\rotate[rotation=315,frame=on]{\strut Water buffalo}\hss} \eTH
+    \bTH \dontleavehmode\kern1.5em\llap{\rotate[rotation=315,frame=on]{\strut Mexican redknee tarantula}\hss} \eTH
+    \bTH \dontleavehmode\kern1.5em\llap{\rotate[rotation=315,frame=on]{\strut European turtle dove}\hss} \eTH
+  \eTR
+  \bTR[frame=on,align=middle]
+    \bTD Amount of legs \eTD
+    \bTD[width=3em] 4 \eTD
+    \bTD[width=3em] 8 \eTD
+    \bTD[width=3em] 2 \eTD
+  \eTR
+\eTABLE
+
+\stoptext

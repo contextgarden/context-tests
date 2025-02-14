@@ -1,0 +1,22 @@
+\continuewhenlmtxmode
+
+\starttext
+
+\startMPcode
+def Test(expr p, c) =
+    draw
+        p
+        withpen pencircle scaled 2mm
+        withcolor c ;
+    draw
+        textext("\bf " & if not (subpath(2,3) of p hascurvature 0.02) : "not" else : "" fi & " curved" )
+        shifted center p ;
+enddef ;
+
+Test(fullcircle scaled 3cm shifted (0cm,0),"darkred");
+Test(fullsquare scaled 3cm shifted (4cm,0),"darkblue");
+Test(fullsquare scaled 3cm shifted (8cm,0) randomizedcontrols 1cm,"darkgreen");
+
+\stopMPcode
+
+\stoptext

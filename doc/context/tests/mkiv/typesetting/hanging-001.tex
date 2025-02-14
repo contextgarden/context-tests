@@ -1,0 +1,45 @@
+\setupexternalfigures
+  [location={local,global,default}]
+
+\useexternalfigure
+  [demo]
+  [hacker.jpg]
+  [height=8lh]
+
+\starttext
+
+\starthanging {\externalfigure[demo]}
+    \samplefile{knuthmath} \par
+    \samplefile{tufte}     \par
+\stophanging
+\samplefile{ward}
+\starthanging[right] {\externalfigure[demo]}
+    \samplefile{knuthmath} \par
+    \samplefile{tufte}     \par
+\stophanging
+
+\page
+
+\starthanging[n=3] {\externalfigure[demo]}
+    \samplefile{knuthmath} \par
+    \samplefile{tufte}     \par
+\stophanging
+\samplefile{ward}
+\starthanging[location=right,n=3] {\externalfigure[demo]}
+    \samplefile{knuthmath} \par
+    \samplefile{tufte}     \par
+\stophanging
+
+\page
+
+\starthanging[topoffset=\lineheight] {\externalfigure[demo]}
+    \samplefile{knuthmath} \par
+    \samplefile{tufte}     \par
+\stophanging
+\samplefile{ward}
+\starthanging[location=right,bottomoffset=\lineheight] {\externalfigure[demo]}
+    \samplefile{knuthmath} \par
+    \samplefile{tufte}     \par
+\stophanging
+
+\stoptext

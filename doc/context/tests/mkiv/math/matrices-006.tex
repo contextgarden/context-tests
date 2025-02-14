@@ -1,0 +1,32 @@
+\continuewhenlmtxmode
+
+\starttext
+
+\definemathmatrix
+  [Pmatrix]
+  [matrix:parentheses]
+ %[align=1:right]
+ %[align=all:right]
+ %[align=2:right]
+  [align={1:left,2:middle,3:right},
+   simplecommand=Pmatrix]
+
+\startformula
+    \startPmatrix
+        \NC -1 \NC  2 \NC  3 \NR
+        \NC  4 \NC -5 \NC  6 \NR
+        \NC  7 \NC  8 \NC -9 \NR
+    \stopPmatrix
+\stopformula
+
+\setupmathmatrix[Pmatrix]
+
+\startformula
+    \Pmatrix{
+        -1, 2, 3;
+         4,-5, 6;
+         7, 8,-9
+    }
+\stopformula
+
+\stoptext

@@ -1,0 +1,18 @@
+\continuewhenlmtxmode
+
+\starttext
+    \startMPpage[offset=10pt]
+        draw lmt_outline [
+            text = "\mathematics{\sqrt{2}-1}"
+        ] ;
+
+        draw lmt_outline [
+            text = "\mathematics{\sqrt[rule=no]{2}-1}"
+        ] shifted (0,-1cm) ;
+
+        draw lmt_outline [
+            text = "\mathematics{\sqrt[rule=yes]{2}-1}"
+        ] shifted (0,-2cm) ;
+    \stopMPpage
+\stoptext
+

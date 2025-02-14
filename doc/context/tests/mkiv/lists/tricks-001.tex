@@ -1,0 +1,35 @@
+% for Mikael who send me this requesst (from SE 09/24)
+
+\starttext
+
+    \definelistalternative
+      [myown]
+      [renderingsetup=myown]
+
+    \startsetups[myown]
+        \bf page\nbsp\structurelistpagenumber
+    \stopsetups
+
+    % back to avoid the \par (there is a already note that this should
+    % be configurable
+
+    \protected\def\MyPage
+      {\setbox\scratchbox\hbox\bgroup
+         \placerawlist
+            [section]
+            [criterium=here, alternative=myown]%
+       \egroup
+       \unhbox\scratchbox}
+
+    \dorecurse{8}{
+
+        \startsection[title={Just a section}]
+
+            This section started on \MyPage\ but continues for a while because we
+            add some more text here, like \samplefile {tufte}.
+
+        \stopsection
+
+    }
+
+\stoptext

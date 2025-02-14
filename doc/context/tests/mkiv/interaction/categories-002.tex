@@ -1,0 +1,21 @@
+% This is viewer dependent, ugly and not documented:
+
+\nopdfcompression
+
+\setupinteraction[state=start]
+
+\enabledirectives[references.border=darkred]
+\enabledirectives[references.border=inner:darkred]
+\enabledirectives[references.border=special operation:darkgreen]
+\enabledirectives[references.border=special operation+url:darkgreen]
+
+\starttext
+    \startTEXpage[offset=1dk, align=middle]
+        \namedgoto[i1]{chapter}[a]\blank
+        \namedgoto[i2]{chapter}[b]\blank
+        \namedgoto[i3]{website}[url(http://www.contextgarden.net)]\blank
+    \stopTEXpage
+
+    \chapter[a]{First  chapter}
+    \chapter[b]{Second chapter}
+\stoptext

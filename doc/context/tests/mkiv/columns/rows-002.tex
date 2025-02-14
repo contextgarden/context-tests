@@ -1,0 +1,65 @@
+\starttext
+
+\startbuffer
+    \startitemize
+        \dorecurse{100}{
+            \startitem test #1 \stopitem
+        }
+    \stopitemize
+\stopbuffer
+
+\startrows[n=4,order=horizontal] % no need for swapping
+    \getbuffer
+\stoprows
+
+\blank
+
+\startrows[n=4]
+    \getbuffer
+\stoprows
+
+\blank
+
+\startbuffer
+    \normalexpanded {\starttabulate[|||]
+        \expandedrepeat 500 {
+            \NC test \NC test \the\currentloopiterator  \NC \NR
+        }
+    \stoptabulate}
+\stopbuffer
+
+\startrows[n=4]
+    \getbuffer
+\stoprows
+
+\startbuffer
+    \starttabulate[|||]
+        \NC test \NC test  1 \NC \NR
+        \NC test \NC test  2 \NC \NR
+        \NC test \NC test  3 \NC \NR
+        \NC test \NC test  4 \NC \NR
+        \NC test \NC test  5 \NC \NR
+        \NC test \NC test  6 \NC \NR
+        \NC test \NC test  7 \NC \NR
+        \NC test \NC test  8 \NC \NR
+        \NC test \NC test  9 \NC \NR
+        \NC test \NC test 10 \NC \NR
+        \NC test \NC test 11 \NC \NR
+        \NC \llap{\vrule height 1.2\strutht depth 1.2\strutdp width 1mm \relax}test \NC test 12 \NC \NR
+      % \NC test \NC test 12 \NC \NR
+        \NC test \NC test 13 \NC \NR
+        \NC test \NC test 14 \NC \NR
+        \NC test \NC test 15 \NC \NR
+        \NC test \NC test 16 \NC \NR
+    \stoptabulate
+\stopbuffer
+
+\blank
+
+% \startrows[n=4,order=vertical]
+% \startrows[n=4,height=2\strutht,depth=2\strutdp]
+\startrows[n=4,height=max,depth=max] \showmakeup[line]
+    \getbuffer
+\stoprows
+
+\stoptext

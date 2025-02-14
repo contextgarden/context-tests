@@ -1,0 +1,32 @@
+\continuewhenlmtxmode
+
+\starttext
+
+\startbuffer[MyText]
+    \definedfont[name:texgyrepagellabold*default]foo f o o%
+\stopbuffer
+
+\startbuffer[MyText]
+    \framed[align=normal,frame=off]{\input{tufte}}%
+\stopbuffer
+
+\setbox\scratchbox\hbox\bgroup
+    \startMPcode
+         draw lmt_outline [
+             kind = "outline",
+             text = "\getbuffer[MyText]",
+         ]
+             withshademethod "linear"
+             withshadedirection down
+             withshadecolors (red, blue)
+         ;
+    \stopMPcode
+\egroup
+
+\startoverlay
+    {\scale[height=\htdp\scratchbox,width=\wd\scratchbox]{\effect[hidden]{\getbuffer[MyText]}}}
+    {\box\scratchbox}
+\stopoverlay
+
+\stoptext
+

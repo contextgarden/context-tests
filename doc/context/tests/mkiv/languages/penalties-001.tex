@@ -1,0 +1,11 @@
+\starttext
+
+\hyphenation{foo{-}{}{}[1]foo{-}{}{}[9]foo}
+
+\dorecurse{100}{foofoofoo }
+
+\hyphenation{foo{-}{}{}[9]foo{-}{}{}[1]foo}
+
+\dorecurse{100}{foofoofoo }
+
+\stoptext

@@ -1,0 +1,17 @@
+\starttext
+
+\setuphead[chapter][beforehead=BEFORE: [\structureuservariable{whatever}]\blank[2*big]]
+
+\startchapter[title=test][whatever=test]
+
+    [\structureuservariable{whatever}]
+
+\stopchapter
+
+\startchapter[title=test]
+
+    [\structureuservariable{whatever}]
+
+\stopchapter
+
+\stoptext

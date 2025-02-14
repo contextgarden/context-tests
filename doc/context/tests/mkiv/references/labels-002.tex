@@ -1,0 +1,19 @@
+% sent by MS
+
+\definereferenceformat[cref][label=*]
+
+\setuplabeltext[chapter=Chapter~,appendix=Appendix~]
+
+\starttext
+
+\startbodymatter
+    \startchapter[title={Body chapter},reference={sec:first}]
+    \stopchapter
+\stopbodymatter
+
+\startappendices
+    \startchapter[title={Appendix chapter},reference={sec:second}]
+        You are at \cref[sec:second].
+        Go back to \cref[sec:first]?
+    \stopchapter
+\stopappendices

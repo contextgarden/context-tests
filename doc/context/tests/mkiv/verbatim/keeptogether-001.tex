@@ -1,0 +1,22 @@
+\showmakeup[vpenalty,line,par]
+
+\starttext
+
+\widowpenalties 3 3000 2000 1000
+\clubpenalties  3   30   20   10
+
+% \widowpenalties 3 options \largestspecificationoptioncode 3000 2000 1000
+% \clubpenalties  3 options \largestspecificationoptioncode   30   20   10
+
+\startbuffer
+test test test test test test and more test test test test test test test and more test
+test test test test test test and more test test test test test test test and more test
+
+test test test test test test and more test test test test test test test and more test
+test test test test test test and more test test test test test test test and more test
+\stopbuffer
+
+\typebuffer[keeptogether=paragraph,align=hangright]
+\typebuffer[keeptogether=paragraph,align=hangleft]
+
+\stoptext

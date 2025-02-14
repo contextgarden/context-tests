@@ -1,0 +1,19 @@
+\starttext
+
+    \definefontfeature[redboxed]  [default][boundingbox=red]
+    \definefontfeature[greenboxed][default][boundingbox=green]
+    \definefontfeature[blueboxed] [default][boundingbox=blue]
+
+    \definefont[TestFontA][Serif*redboxed]
+    \definefont[TestFontB][Serif*greenboxed]
+    \definefont[TestFontC][Serif*blueboxed]
+
+    \startTEXpage[offset=10pt]
+
+        \start \nokerning \TestFontA \input zapf \stop \blank
+        \start \nokerning \TestFontB \input zapf \stop \blank
+        \start \nokerning \TestFontC \input zapf \stop
+
+    \stopTEXpage
+
+\stoptext

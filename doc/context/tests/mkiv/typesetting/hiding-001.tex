@@ -1,0 +1,12 @@
+\continuewhenlmtxmode
+
+\starttext
+
+    \dorecurse {10} {
+        \input tufte
+        \starthiddencontent {\red \input tufte } \stophiddencontent
+        \input tufte
+        \par
+    }
+
+\stoptext

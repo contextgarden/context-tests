@@ -1,0 +1,18 @@
+\showframe
+
+\starttext
+
+\dorecurse{10}{
+    \showboxes
+    %
+    \dorecurse{2}{
+        \localleftbox  index ##1 {\ruledhbox{\smallinfofont\setstrut\strut[L #1.##1]}}%
+    }
+    %
+    \dorecurse{4}{
+        \localrightbox index ##1 {\ruledhbox{\smallinfofont\setstrut\strut[R #1.##1]}}%
+    }%
+    \samplefile{tufte}
+}
+
+\stoptext

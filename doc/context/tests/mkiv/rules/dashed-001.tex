@@ -1,0 +1,32 @@
+\starttext
+
+\starttabulate
+    \FL[1,2] % linefactor (old) dashfactor (new)
+    \NC test \NC test and test and test and done \NC \NR
+    \ML[1,1]
+    \NC test \NC test and test and test and done \NC \NR
+    \NC test \NC test and test and test and done \NC \NR
+    \NC test \NC test and test and test and done \NC \NR
+    \LL[1,10]
+\stoptabulate
+
+\framed[align=middle,topframe=dash,frame=off]{\samplefile{tufte}}
+
+\framed[align=middle,frame=dash,dashstep=.01hs,rulethickness=1pt]{\samplefile{tufte}}
+\framed[align=middle,frame=dash,dashstep=10pt,rulethickness=2pt,background=color,backgroundcolor=gray]{\samplefile{tufte}}
+
+x\blackrule[width=9.2cm,on=1cm,off=1cm,height=2mm,color=orange]x
+
+\setuptextrules[on=1mm,off=1mm]
+
+\textrule{test}
+
+\thinrule[on=2mm,off=2mm]
+
+% test         {\vrule     width   5cm height 2.5pt off 2mm on 2mm \relax} test\par
+% test         {\vrule depth 1pt    width   5cm height 2.5pt off 2mm on 2mm \relax} test\par
+% test {\leaders\vrule  depth 1.5pt           height 1.5pt off 2mm on 2mm \relax\hfill} test\par
+% test         {\vrule depth 1.5pt width  5.2cm off 2mm on 2mm \relax}test\par
+% test         {\hrule    height  5cm width  2.5pt off 2mm on 2mm \relax} test\par
+
+\stoptext

@@ -1,0 +1,165 @@
+\starttext
+
+\pushoverloadmode \unprotect
+
+\def\tabl_split_loop_body
+  {\ifinsidecolumns
+     % brrr, assumes empty columns
+     \global\splitfloatfirstdone\conditionalfalse
+     \d_split_available_height\textheight
+     \c_tabl_split_full\conditionaltrue
+   \else
+     \ifconditional\splitfloatfirstdone
+       \d_split_available_height\textheight
+       \c_tabl_split_full\conditionaltrue
+     \orelse\ifdim\pagegoal<\maxdimen
+       \d_split_available_height\dimexpr\pagegoal-\pagetotal\relax
+       \c_tabl_split_full\conditionalfalse
+     \else
+       \d_split_available_height\textheight
+       \c_tabl_split_full\conditionaltrue
+     \fi
+   \fi
+   \d_split_available_height \dimexpr
+      \d_split_available_height
+     -\d_split_inbetween_height
+     -\d_split_minimum_free_space
+     -\extrasplitfloatlines\lineheight
+   \relax
+   \ifdim\htdp\b_split_tail>\zeropoint
+     \advanceby\d_split_available_height-\htdp\b_split_tail
+   \fi
+   \setbox\b_split_result\vbox
+     {\ifdim\ht\b_split_head>\zeropoint
+        \unvcopy\b_split_head
+        \expand\t_split_section
+        \expand\t_split_inbetween
+      \fi}%
+   \ifconditional\c_tabl_split_done \else
+     \ifdim\ht\b_split_next>\zeropoint
+       \setbox\b_split_head\box\b_split_next
+     \fi
+   \fi
+   \c_tabl_split_done\conditionaltrue
+   \ifdim\ht\b_split_result>\zeropoint
+     \c_tabl_split_head\conditionaltrue  % table head
+   \else
+     \c_tabl_split_head\conditionalfalse % no tablehead
+   \fi
+   \splittopskip\zeroskip
+   \ifvoid\b_split_result_saved\else
+     \setbox\b_split_result\box\b_split_result_saved
+     \c_tabl_split_head\conditionaltrue % no tablehead
+     \global\tabl_split_forced_page\conditionalfalse
+   \fi
+   % we get a lot of splittopskips here .. todo: ignore when zero
+   \localcontrolledrepeating
+     {\setbox\scratchbox\vsplit\b_split_content to \onepoint % \lineheight
+      \setbox\scratchbox\vbox % \vpack
+        {\unvbox\scratchbox
+         \setbox\scratchbox\vbox % \vpack
+           {\splitdiscards
+            \ifnum\lastpenalty>-\plustenthousand\else
+               % so that \bTR[before=\page] works
+               \global\tabl_split_forced_page\conditionaltrue
+            \fi}}%
+% \tracingall
+\writestatus{!!!!}{1!!!!!!!!!!!!!! \the\d_split_available_height}%
+\writestatus{!!!!}{2!!!!!!!!!!!!!! \the\htdp\scratchbox}%
+\writestatus{!!!!}{3!!!!!!!!!!!!!! \the\htdp\b_split_result}%
+\writestatus{!!!!}{4!!!!!!!!!!!!!! \the\dimexpr\d_split_available_height-\htdp\scratchbox-\htdp\b_split_result\relax}%
+\writestatus{!!!!}{}%
+      \ifconditional\tabl_split_forced_page
+        \global\tabl_split_forced_page\conditionalfalse
+        \setbox\b_split_result\vbox
+          {\unvbox\b_split_result
+           \expand\t_split_inbetween
+           \unvbox\scratchbox}%
+        \quitloop
+      \orelse\ifdim\dimexpr\d_split_available_height-\htdp\scratchbox-\htdp\b_split_result\relax>\zeropoint
+        \setbox\b_split_result\vbox
+          {\unvbox\b_split_result
+           \expand\t_split_inbetween
+           \unvbox\scratchbox}%
+        \ifvoid\b_split_content
+          \quitloop
+        \fi
+      \orelse\ifconditional\c_tabl_split_head
+        % we only have a tablehead so far
+        \global\setbox\b_split_result_saved\vbox{\unvbox\b_split_result\unvbox\scratchbox}% \vpack
+        \quitloop
+      \orelse\ifconditional\c_tabl_split_full
+        % we have text height available, but the (one) cell is too
+        % large to fit, so, in order to avoid loops/deadcycles we do:
+        \setbox\b_split_result\vbox
+          {\unvbox\b_split_result
+           \expand\t_split_inbetween
+           \unvbox\scratchbox}%
+        \quitloop
+      \else
+        \setbox\b_split_content\vbox
+          {\unvbox\scratchbox
+           \expand\t_split_inbetween
+           \ifvoid\b_split_content\else\unvbox\b_split_content\fi}%
+        \quitloop
+      \fi
+% \tracingnone
+      \c_tabl_split_head\conditionalfalse
+      \c_tabl_split_full\conditionalfalse}%
+   \postprocesstsplit
+   \page_split_float_check_content\b_split_content
+   \ifvoid\b_split_content
+     \setbox\b_split_result\vbox
+       {\unvbox\b_split_result
+        \expand\t_split_inbetween
+        \unvcopy\b_split_tail}%
+     \page_split_float_process{\expand\t_split_before_result\box\b_split_result\expand\t_split_after_result}%
+     \doifnotinsidesplitfloat{\expand\t_split_after}%
+     \endgraf
+     \quitloop
+   \else
+     % hack
+     \ifdim\pagegoal<\maxdimen
+       \pagegoal\dimexpr\pagegoal+\lineheight\relax % etex
+     \fi
+     % brrr
+     \ifdim\ht\b_split_result>\zeropoint
+       \setbox\b_split_result\vbox
+         {\unvbox\b_split_result
+          \expand\t_split_inbetween
+          \unvcopy\b_split_tail}%
+       \page_split_float_process{\expand\t_split_before_result\box\b_split_result\expand\t_split_after_result}%
+       \doifnotinsidesplitfloat{\expand\t_split_after}%
+       \endgraf
+       \global\usesamefloatnumber\conditionaltrue % new, prevent next increment
+     \fi
+     \ifinsidecolumns
+       \goodbreak % was \doifnotinsidesplitfloat\goodbreak
+     \else
+       \page      % was \doifnotinsidesplitfloat\page
+     \fi
+   \fi}
+
+\protect
+
+\startplacefigure[location=left,title=Whatever,reference=fig:1]
+    \externalfigure[cow]
+\stopplacefigure
+
+\input ward  \par \input ward \par
+
+\startplacetable[location={split},title={Function Details},reference={tab:09}]
+    \bTABLE[split=repeat,option=stretch]
+        \bTABLEhead
+            \bTR \bTH first \eTH \eTR
+        \eTABLEhead
+        \bTABLEnext
+            \bTR \bTH next  \eTH \eTR
+        \eTABLEnext
+        \bTABLEbody
+            \dorecurse{10}{\bTR \bTD \input{tufte} \eTD \eTR}
+        \eTABLEbody
+    \eTABLE
+\stopplacetable
+
+\stoptext

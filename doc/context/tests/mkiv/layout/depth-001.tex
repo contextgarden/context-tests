@@ -1,0 +1,31 @@
+\setuppapersize[A5][A5]
+
+\definelayout[A5]
+  [
+%   limitstretch=auto,
+%   limitstretch=2\lineheight,
+%   limitstretch=\maxdimen,
+%   limitstretch=1sp,
+   ]
+
+\setuplayout
+  [A5]
+
+\setupalign
+  [depth]
+
+\showframe
+
+\starttext
+
+\startstandardmakeup
+    \vfill
+    look at the next page
+\stopstandardmakeup
+
+\input tufte
+
+\blank[3*medium] \rightaligned{quoting tufte}
+\blank[medium]   \rightaligned{indeed}
+
+\stoptext

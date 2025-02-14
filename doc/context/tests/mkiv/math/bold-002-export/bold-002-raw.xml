@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<!--
+
+    input filename   : bold-002
+    processing date  : 2025-02-12 00:24:29+01:00
+    context version  : 2025.02.07 20:46
+    exporter version : 0.36
+
+-->
+
+<?xml-stylesheet type="text/css" href="styles/bold-002-defaults.css" ?>
+<?xml-stylesheet type="text/css" href="styles/bold-002-images.css" ?>
+<?xml-stylesheet type="text/css" href="styles/bold-002-fonts.css" ?>
+<?xml-stylesheet type="text/css" href="styles/bold-002-styles.css" ?>
+<document context="2025.02.07 20:46" date="2025-02-12 00:24:29+01:00" file="bold-002" language="en" title="bold-002" version="0.36" xml:lang="en">
+<math data-lmtx-blob="1" data-lmtx-meaning="the square root of group 𝑥 squared end group times the square root of group 𝐱 to the power of 𝟐 end group" display="inline" displaystyle="false" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msqrt><mrow><msup><mi>𝑥</mi><mn>2</mn></msup></mrow></msqrt><msqrt><mrow><msup><mi>𝐱</mi><mn>𝟐</mn></msup></mrow></msqrt></mrow></math> 
+ <break/>
+<math data-lmtx-blob="2" data-lmtx-family="bold" data-lmtx-meaning="the square root of group 𝑥 squared end group times the square root of group 𝑥 squared end group" display="inline" displaystyle="false" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msqrt><mrow><msup><mi>𝑥</mi><mn>2</mn></msup></mrow></msqrt><msqrt><mrow><msup><mi>𝑥</mi><mn>2</mn></msup></mrow></msqrt></mrow></math> 
+ <break/>
+<math data-lmtx-blob="3" data-lmtx-meaning="the square root of group 𝑥 squared end group times 𝜶 times 𝜎 times 𝜌 times 𝒙 times the square root of group 𝑥 squared end group" display="inline" displaystyle="false" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msqrt><mrow><msup><mi>𝑥</mi><mn>2</mn></msup></mrow></msqrt><mi>𝜶</mi><mi>𝜎</mi><mi>𝜌</mi><mi>𝒙</mi><msqrt><mrow><msup><mi>𝑥</mi><mn>2</mn></msup></mrow></msqrt></mrow></math> 
+ <break/>
+<math data-lmtx-blob="4" data-lmtx-meaning="the square root of group 𝑥 squared end group times the square root of group 𝐱 squared end group" display="inline" displaystyle="false" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msqrt><mrow><msup><mi>𝑥</mi><mn>2</mn></msup></mrow></msqrt><msqrt><mrow><msup><mi>𝐱</mi><mn>2</mn></msup></mrow></msqrt></mrow></math> 
+ <break/>
+<math data-lmtx-blob="5" data-lmtx-meaning="the square root of group 𝑥 squared end group times the square root of group 𝑥 squared end group" display="inline" displaystyle="false" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msqrt><mrow><msup><mi>𝑥</mi><mn>2</mn></msup></mrow></msqrt><msqrt><mrow><msup><mi>𝑥</mi><mn>2</mn></msup></mrow></msqrt></mrow></math> 
+ <break/>
+<math data-lmtx-blob="6" data-lmtx-family="bold" data-lmtx-meaning="the square root of group 𝑥 squared end group times the square root of group 𝑥 squared end group" display="inline" displaystyle="false" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msqrt><mrow><msup><mi>𝑥</mi><mn>2</mn></msup></mrow></msqrt><msqrt><mrow><msup><mi>𝑥</mi><mn>2</mn></msup></mrow></msqrt></mrow></math></document>

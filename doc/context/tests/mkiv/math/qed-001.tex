@@ -1,0 +1,146 @@
+\continuewhenlmtxmode
+
+\showmakeup[line]
+
+\defineenumeration
+  [proof]
+  [alternative=serried,
+   width=fit,
+   distance=1ex,
+   text=Proof,
+   number=no,
+   headstyle=italic,
+   headcommand=\groupedcommand{}{.},
+   closesymbol=\mathqed]
+
+\starttext
+
+\startproof
+Ending with text, the symbols is placed at the end of the line.
+\samplefile{knuthmath}
+\stopproof
+
+\startproof
+A formula in the middle does not change that.
+\samplefile{knuthmath}
+\startformula
+  1 + 1 = 2
+\stopformula
+\samplefile{knuthmath}
+\stopproof
+
+\startproof
+The same holds for a numbered formula.
+\samplefile{knuthmath}
+\startplaceformula
+\startformula
+  1 + 1 = 2\mtp{.}
+\stopformula
+\stopplaceformula
+\samplefile{knuthmath}
+\stopproof
+
+\startproof
+If we end with math, there is no symbol placed.
+\samplefile{knuthmath}
+\startformula
+  1 + 1 = 2\mtp{.}
+\stopformula
+\stopproof
+
+\startproof
+We can place it manually with \tex {qedhere}.
+\samplefile{knuthmath}
+\startformula
+  2 + 3 = 5\mtp{.}\qedhere
+\stopformula
+\stopproof
+
+\page[yes]
+
+\startproof
+It also works if we have a formula running over more than one line.
+\samplefile{knuthmath}
+\startformula
+  1 + 2
+  \alignhere
+  = 2 + 1
+  \breakhere
+  = 3\mtp{.}
+  \qedhere
+\stopformula
+\stopproof
+
+\startproof
+If we have a formula number, we do not want the symbol on the same line.
+Then we use \tex {qed} to place the box below.
+\samplefile{knuthmath}
+\startplaceformula
+\startformula
+  1 + 1 > 1\mtp{.}\qed
+\stopformula
+\stopplaceformula
+\stopproof
+
+\startproof
+That also works for formulas running over more than one line.
+\samplefile{knuthmath}
+\startplaceformula
+\startformula
+  1 + 2
+  \alignhere
+  = 2 + 1
+  \breakhere
+  = 3\mtp{.}\qed
+\stopformula
+\stopplaceformula
+\stopproof
+
+\startproof
+It also works for alignments.
+\samplefile{knuthmath}
+\startplaceformula
+\startformula
+  \startalign
+    \NC f(x) \NC = \sin x \NR[+]
+    \NC g(x) \NC = \cos x \NR[+]
+  \stopalign
+  \qed
+\stopformula
+\stopplaceformula
+\stopproof
+
+\startproof
+We can also force the symbol on an earlier line.
+\samplefile{knuthmath}
+\startformula
+  1 + 2 = 2 + 1\qedhere
+  \breakhere
+  = 3 - 0
+\stopformula
+\stopproof
+
+\page[yes]
+
+\startproof
+Just another example with the \tex {numberhere} mechanism.
+\samplefile{knuthmath}
+\startformula
+  1 + 2 \alignhere
+  = 2 + 1 \numberhere \breakhere
+  = 3\mtp{.} \numberhere \qed
+\stopformula
+\stopproof
+
+\startproof
+And a final example.
+\samplefile{knuthmath}
+\startformula
+  1 + 2 \alignhere
+  = 2 + 1 \numberhere[eq:foo] \breakhere
+  = 3\mtp{.} \qedhere
+\stopformula
+\stopproof
+
+See \in[eq:foo]
+\stoptext

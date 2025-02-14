@@ -1,0 +1,22 @@
+\setuppagenumbering
+  [alternative=doublesided]
+
+\setupformula
+  [location=outer]
+
+\starttext
+
+\startchapter
+  [title=A test chapter]
+
+\dorecurse{100}{%
+    \samplefile{knuth}\par
+    \startformula
+        a^2 + b^2  = c^2 \numberhere
+    \stopformula
+    \samplefile{knuthmath}\par
+}
+
+\stopchapter
+
+\stoptext

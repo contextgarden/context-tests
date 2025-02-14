@@ -1,0 +1,31 @@
+\enableexperiments[fonts.compact]
+
+\starttext
+
+\startTEXpage[offset=1TS]
+
+\startbuffer
+
+\protected\def\ShowMathUnits#1%
+  {\im{#1x\mathord{+
+     {\darkgray \vrule width 1pt depth 0pt height 1ex \relax}%
+     {\darkred  \vrule width 1pt depth 0pt height 1ma \relax}%
+     {\darkgreen\vrule width 1pt depth 0pt height 1mx \relax}%
+     {\darkblue \vrule width 1pt depth 0pt height 1mq \relax}%
+    x}}}
+
+%ShowMathUnits\displaystyle
+\ShowMathUnits\textstyle
+\ShowMathUnits\scriptstyle
+\ShowMathUnits\scriptscriptstyle
+\stopbuffer
+
+\getbuffer
+
+\setupbodyfont[20pt]
+
+\getbuffer
+
+\stopTEXpage
+
+\stoptext

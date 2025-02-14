@@ -1,0 +1,28 @@
+\nopdfcompression
+
+\setupinteraction[state=start]
+
+\definecolor[pdfhighlight:Rhaban][r=.8,g=1,b=1]
+\definecolor[pdfhighlight:Hans]  [r=1,g=.8,b=1]
+\definecolor[pdfhighlight:Ton]   [r=1,g=1,b=.8]
+
+\starttext
+
+\startbuffer
+    test \PDFhighlight[Rhaban][some text here]{\samplefile{tufte}} test \blank
+    test \PDFhighlight[Hans]                  {what a mess}        test \blank
+    test \PDFhighlight[Ton]                   {\samplefile{tufte}} test \page
+\stopbuffer
+
+\subject{Conform standard <= 2024}
+
+\getbuffer
+
+\subject{Conform viewers <= 2024}
+
+\enabledirectives[backen d.pdf.fixhighlight]
+
+\getbuffer
+
+\stoptext
+

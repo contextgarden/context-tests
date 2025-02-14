@@ -1,0 +1,206 @@
+\usemodule[oldcolumnsets]
+
+% \setuptextbackground
+%   [mp=mpos:region:kind]
+
+% \startuseMPgraphic{mpos:par:region}
+%     show_multi_pars
+% \stopuseMPgraphic
+
+\setupbodyfont[dejavu,10pt]
+
+\dontcomplain
+
+\setuplayout
+  [backspace=2cm,
+   width=middle,
+   cutspace=3cm]
+
+\setuppagenumbering
+  [alternative=doublesided]
+
+% \setuppapersize[A4][A3] \setuplayout[location=middle]
+
+\definetextbackground[b:r][backgroundcolor=red]
+\definetextbackground[b:g][backgroundcolor=green]
+\definetextbackground[b:b][backgroundcolor=blue]
+\definetextbackground[b:c][backgroundcolor=cyan]
+\definetextbackground[b:m][backgroundcolor=magenta]
+\definetextbackground[b:y][backgroundcolor=yellow]
+
+\definetextbackground[t:1][backgroundcolor=red]
+\definetextbackground[t:2][backgroundcolor=green]
+\definetextbackground[t:3][backgroundcolor=blue]
+\definetextbackground[t:4][backgroundcolor=cyan]
+\definetextbackground[t:5][backgroundcolor=magenta]
+\definetextbackground[t:6][backgroundcolor=yellow]
+
+\startbuffer[tabulate]
+    \starttabulate[||pl|pl||]
+    \NC test \NC \dorecurse{5}{before \starttextbackground[b:r] \input ward \stoptextbackground{} after\par}                 \NC before \starttextbackground[b:r]\input ward \stoptextbackground after \NC test \NC \NR
+    \NC test \NC \dorecurse{1}{before \starttextbackground[b:g] \dorecurse{20}{\input ward }\stoptextbackground{} after\par} \NC before \starttextbackground[b:r]\input ward \stoptextbackground after \NC test \NC \NR
+    \NC test \NC \dorecurse{3}{before \starttextbackground[b:b] \input ward \stoptextbackground{} after\par}                 \NC before \starttextbackground[b:r]\input ward \stoptextbackground after \NC test \NC \NR
+    \NC test \NC \dorecurse{4}{before \starttextbackground[b:c] \input ward \stoptextbackground{} after\par}                 \NC before \starttextbackground[b:r]\input ward \stoptextbackground after \NC test \NC \NR
+    \stoptabulate
+\stopbuffer
+
+\startbuffer[xtable]
+    \startxtable[offset=2mm,region=\ifpositioning yes\fi]
+        \startxrow
+            \startxcell
+                \starttextbackground[b:r]
+                    \input ward
+                \stoptextbackground{}
+                \input ward
+                \starttextbackground[b:y]
+                    \input ward
+                \stoptextbackground{}
+            \stopxcell
+            \startxcell
+                \starttextbackground[b:g]
+                    \input ward
+                    \starttextbackground[b:b]
+                        \input ward
+                    \stoptextbackground{}
+                    \input ward
+                \stoptextbackground{}
+            \stopxcell
+            \startxcell
+                \starttextbackground[b:c]
+                    \input ward
+                \stoptextbackground{}
+                \starttextbackground[b:m]
+                    \input ward
+                \stoptextbackground{}
+                \input ward
+            \stopxcell
+        \stopxrow
+    \stopxtable
+\stopbuffer
+
+\startbuffer[figure]
+    \input ward
+    \placefigure
+      {}
+      {\framed[align=normal]\bgroup
+            \input ward
+            \starttextbackground[b:g]
+                BEGIN \input ward END
+            \stoptextbackground
+            \input ward
+       \egroup}
+\stopbuffer
+
+\startbuffer[text]
+    \page
+    \par \dorecurse{1}{\input ward }
+    \starttextbackground[b:g]
+        BEGIN \dorecurse{2}{\input ward } END
+    \stoptextbackground
+    \dorecurse{1}{\input ward } \par
+    \startnarrower
+        \dorecurse{1}{\input ward }
+        \starttextbackground[b:b]
+            BEGIN \dorecurse{2}{\input ward } END
+        \stoptextbackground
+        \dorecurse{1}{\input ward }
+    \stopnarrower
+\stopbuffer
+
+\startbuffer[side]
+    \page
+    \starttextbackground[b:r] START
+    \dorecurse{10}{
+        \dorecurse{1}{\input ward }
+        \placefigure[right]{}{}
+        some text before BEGIN \dorecurse{2}{\input ward } END some after
+        \placefigure[left]{}{}
+        some text before BEGIN \dorecurse{2}{\input ward } END some after
+        \placefigure[right]{}{}
+        some text before BEGIN \dorecurse{2}{\input ward } END some after
+    }
+    STOP \stoptextbackground
+    \dorecurse{1}{\input ward }
+\stopbuffer
+
+\startbuffer[columns]
+    \startcolumns[balance=no]
+        \dorecurse{5} {
+            \par
+            \dorecurse{1}{\input ward }
+            \starttextbackground[t:\recurselevel]
+                BEGIN
+                \dorecurse{7}{\input ward }
+                END
+            \stoptextbackground
+            \dorecurse{3}{\input ward }
+            \par
+        }
+
+        \dorecurse{10} {
+            \par
+            \dorecurse{1}{\input ward }
+            \starttextbackground[b:g]
+                BEGIN
+                \dorecurse{1}{\input ward }
+                \starttextbackground[b:r]
+                    \dorecurse{10}{\recurselevel: \input ward }
+                \stoptextbackground
+                \dorecurse{1}{\input ward }
+                END
+            \stoptextbackground
+            \dorecurse{1}{\input ward }
+            \par
+        }
+    \stopcolumns
+\stopbuffer
+
+\startbuffer[columnset]
+    \definecolumnset[test][n=2]
+    \startcolumnset[test]
+        \dorecurse{5} {
+            \par
+            \dorecurse{1}{\input ward }
+            \starttextbackground[t:\recurselevel]
+                \dorecurse{1}{\input ward }
+                BEGIN
+                \starttextbackground[b:r]
+                    \dorecurse{30}{\recurselevel: \input ward }
+                \stoptextbackground
+                END
+                \dorecurse{1}{\input ward }
+            \stoptextbackground
+            \dorecurse{3}{\input ward }
+            \par
+        }
+    \stopcolumnset
+\stopbuffer
+
+\startbuffer[shape]
+    \page
+    \definetextbackground[mine]
+    test\space\strut
+        \starttextbackground[mine]
+        \input ward
+        \par
+        \parshape 5 5cm 8cm 4cm 8cm 3cm 8cm 2cm 8cm 1cm 8cm
+            \input ward
+            \input ward
+        \par
+        \input ward
+        \stoptextbackground
+    \strut\space test
+\stopbuffer
+
+\starttext
+
+    \getbuffer[xtable]
+    \getbuffer[tabulate]
+    \getbuffer[figure]
+    \getbuffer[text]
+    \getbuffer[side]
+    \getbuffer[columns]
+    \getbuffer[columnset]
+    \getbuffer[shape]
+
+\stoptext

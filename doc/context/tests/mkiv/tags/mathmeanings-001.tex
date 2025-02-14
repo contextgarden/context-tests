@@ -1,0 +1,85 @@
+\continuewhenlmtxmode
+
+\nopdfcompression
+
+\setupbackend
+  [format=pdf/ua-2]
+
+\setuptagging
+  [state=start]
+
+\starttext
+
+\startmathmeaning
+ x = w \sin\theta \cos\phi \mtext{and}
+ y = w \sin\theta \sin\phi \mtext{and}
+ z = w \cos\theta
+\stopmathmeaning
+
+\startformula
+  \startalign
+    \NC x \EQ w \sin\theta \cos\phi \mtp{,} \NR
+    \NC y \EQ w \sin\theta \sin\phi \mtp{,} \NR
+    \NC z \EQ w \cos\theta          \mtp{.} \NR
+  \stopalign
+\stopformula
+
+\startsubformulas
+  \startplaceformula
+    \startmathmeaning
+     a = 1
+    \stopmathmeaning
+    \startformula
+      \startalign
+        \NC x \EQ w \sin\theta \cos\phi \mtp{,} \NR[eq:ssx]
+        \NC y \EQ w \sin\theta \sin\phi \mtp{,} \NR[eq:ssy]
+        \NC z \EQ w \cos\theta          \mtp{.} \NR[eq:ssz]
+      \stopalign
+    \stopformula
+  \stopplaceformula
+  \startplaceformula
+    \startmathmeaning
+     b = 1
+    \stopmathmeaning
+    \startformula
+      \startalign
+        \NC p \EQ w \sin\theta \cos\phi \mtp{,} \NR[eq:ssp]
+        \NC q \EQ w \sin\theta \sin\phi \mtp{,} \NR[eq:ssq]
+        \NC r \EQ w \cos\theta          \mtp{.} \NR[eq:ssr]
+      \stopalign
+    \stopformula
+  \stopplaceformula
+\stopsubformulas
+
+\startsubformulas
+  \startplaceformula
+    \startformula
+        x = 10
+    \stopformula
+  \stopplaceformula
+  \startplaceformula
+    \startformula
+        x = 20
+    \stopformula
+  \stopplaceformula
+  \startplaceformula
+    \startformula
+      \startalign
+        \NC a \EQ w \sin\theta \cos\phi \mtp{,} \NR[eq:ssa]
+        \NC b \EQ w \sin\theta \sin\phi \mtp{,} \NR[eq:ssb]
+        \NC c \EQ w \cos\theta          \mtp{.} \NR[eq:ssc]
+      \stopalign
+    \stopformula
+  \stopplaceformula
+  \startplaceformula
+    \startformula
+      \startalign
+        \NC a \EQ w \sin\theta \cos\phi \NR [eq:ssa]
+        \NC b \EQ w \sin\theta \sin\phi \NR [eq:ssb]
+        \NC c \EQ w \cos\theta          \NR [eq:ssc]
+      \stopalign
+    \stopformula
+  \stopplaceformula
+\stopsubformulas
+
+\stoptext

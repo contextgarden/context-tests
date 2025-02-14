@@ -1,0 +1,42 @@
+\definelayer[text]
+
+\setupbackgrounds
+  [text][text]
+  [background={text,foreground}]
+
+\setuppapersize  [S5]
+
+\definehead [slide][section][page=yes]
+
+\starttext
+
+\startstackingsteps[1,1-2,1-3]
+
+\startslide[title={Test}]
+
+  \startstacking[1]
+    \setlayerframed
+      [text][line=4,column=2]
+      [frame=off,background=color,backgroundcolor=darkblue,foregroundcolor=white]
+      {On first stack: \currentstacking}
+  \stopstacking
+
+  \startstacking[2]
+    \setlayerframed
+      [text][line=6,column=2]
+      [frame=off,background=color,backgroundcolor=darkred,foregroundcolor=white]
+      {On second stack: \currentstacking}
+  \stopstacking
+
+  \startstacking[3]
+    \setlayerframed
+      [text][line=8,column=2]
+      [frame=off,background=color,backgroundcolor=darkgreen,foregroundcolor=white]
+      {On third stack: \currentstacking}
+  \stopstacking
+
+\stopslide
+
+\stopstackingsteps
+
+\stoptext

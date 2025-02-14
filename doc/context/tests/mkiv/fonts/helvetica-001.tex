@@ -1,0 +1,23 @@
+% \enabletrackers[fonts.defining]
+
+\starttext
+
+\def\TestLine#1{\NC #1 \NC \definedfont[#1]#1\NC\NR}
+
+\starttabulate[|T|l|]
+    \TestLine{name:helveticaneuenormal}
+    \TestLine{name:helveticaneueregular}
+    \TestLine{name:helveticaneueitalic}
+    \TestLine{name:helveticaneuebold}
+    \TestLine{name:helveticaneuebolditalic}
+    \TestLine{name:helveticaneuelight}
+    \TestLine{name:helveticaneuelightitalic}
+    \TestLine{name:helveticaneueultralight}
+    \TestLine{name:helveticaneueultralightitalic}
+    \TestLine{name:helveticaneuemedium}
+    \TestLine{name:helveticaneueblack}
+    \TestLine{name:helveticaneuecondensedbold}
+    \TestLine{name:helveticaneuecondensedblack}
+\stoptabulate
+
+\stoptext

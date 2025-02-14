@@ -1,0 +1,16 @@
+return {
+ ["htmlfiles"]={ "export-009-div.html" },
+ ["htmlroot"]="export-009-div.html",
+ ["identifier"]="10cb3cfe-4780-b8ca-afab-f41cc015d9e4",
+ ["imagefile"]="styles/export-009-images.css",
+ ["imagepath"]="images",
+ ["images"]={},
+ ["language"]="en",
+ ["metadata"]={},
+ ["name"]="export-009",
+ ["stylepath"]="styles",
+ ["styles"]={ "export-009-defaults.css", "export-009-images.css", "export-009-fonts.css", "export-009-styles.css" },
+ ["title"]="export-009",
+ ["xhtmlfiles"]={ "export-009-tag.xhtml" },
+ ["xmlfiles"]={ "export-009-raw.xml" },
+}

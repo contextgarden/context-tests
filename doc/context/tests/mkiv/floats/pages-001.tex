@@ -1,0 +1,42 @@
+\starttext
+
+\samplefile{tufte}
+
+\startplacefigure[location=page]
+    \externalfigure[dummy]
+\stopplacefigure
+
+\samplefile{tufte}
+
+\dorecurse{6}{
+    \startplacefigure[location={page,append}] \externalfigure[dummy] \stopplacefigure
+}
+
+\startplacefigure[location=page]
+    \externalfigure[dummy]
+\stopplacefigure
+
+\samplefile{tufte}
+
+\page
+
+\samplefile{tufte}
+
+\startplacefigure[location=page]
+    \externalfigure[dummy]
+\stopplacefigure
+
+\samplefile{tufte}
+
+\dorecurse{5}{
+    \startplacefigure[location={page,append}] \externalfigure[dummy] \stopplacefigure
+}
+
+\startplacefigure[location=page]
+    \externalfigure[dummy]
+\stopplacefigure
+
+\samplefile{tufte}
+
+\stoptext
+

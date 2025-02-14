@@ -1,0 +1,18 @@
+\definehead[one]  [section] [style=\sl]
+\definehead[two]  [one]
+\definehead[three][two]
+\definehead[four] [one]
+
+\starttext
+
+    \usemodule[structure-sections]
+
+    \showstructuresections
+
+    \one{section-one->chapter-one}
+    \two{section-two}
+    \three{section-three}
+    \four{chapter-one}
+    \four{chapter-four}
+
+\stoptext

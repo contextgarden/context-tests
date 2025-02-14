@@ -1,0 +1,65 @@
+\starttext
+
+% \startoverlay
+%     {
+%         \green
+%         \enabledirectives[characters.spaceafteruppercase=normal]%
+%         \vbox{\hsize 5em x. X\par x.\ X\par X. X\par X.\ X\par}
+%     } {
+%         \blue
+%         \enabledirectives[characters.spaceafteruppercase=traditional]%
+%         \vbox{\hsize 5em x. X\par x.\ X\par X. X\par X.\ X\par}
+%     } {
+%         \red
+%         \specialspacefactors
+%         \enabledirectives[characters.spaceafteruppercase=500]%
+%         \vbox{\hsize 5em x. X\par x.\ X\par X. X\par X.\ X\par}
+%     }
+% \stopoverlay
+
+\startoverlay
+    \bgroup \vbox \bgroup
+        \green
+        \periodicshrink 0 % basically 999
+        \dontleavehmode
+        \ruledhbox{So, this is a           {S.           Bernhard} dog carrying a can of drink.}\par
+        \ruledhbox{So, this is a \periodic {S.           Bernhard} dog carrying a can of drink.}\par
+        \ruledhbox{So, this is a \Periodic {S.           Bernhard} dog carrying a can of drink.}\par
+        \ruledhbox{So, this is a           {St.          Bernhard} dog carrying a can of drink.}\par
+        \ruledhbox{So, this is a \periodic {St.          Bernhard} dog carrying a can of drink.}\par
+        \ruledhbox{So, this is a \Periodic {St.          Bernhard} dog carrying a can of drink.}\par
+        \ruledhbox{So, this is a           {Prof. Dr. S. Bernhard} dog carrying a can of drink.}\par
+        \ruledhbox{So, this is a \periodic {Prof. Dr. S. Bernhard} dog carrying a can of drink.}\par
+        \ruledhbox{So, this is a \Periodic {Prof. Dr. S. Bernhard} dog carrying a can of drink.}\par
+    \egroup \egroup
+    \bgroup \vbox \bgroup
+        \blue
+        \periodicshrink 250 %
+        \dontleavehmode
+        \ruledhbox{So, this is a           {S.           Bernhard} dog carrying a can of drink.}\par
+        \ruledhbox{So, this is a \periodic {S.           Bernhard} dog carrying a can of drink.}\par
+        \ruledhbox{So, this is a \Periodic {S.           Bernhard} dog carrying a can of drink.}\par
+        \ruledhbox{So, this is a           {St.          Bernhard} dog carrying a can of drink.}\par
+        \ruledhbox{So, this is a \periodic {St.          Bernhard} dog carrying a can of drink.}\par
+        \ruledhbox{So, this is a \Periodic {St.          Bernhard} dog carrying a can of drink.}\par
+        \ruledhbox{So, this is a           {Prof. Dr. S. Bernhard} dog carrying a can of drink.}\par
+        \ruledhbox{So, this is a \periodic {Prof. Dr. S. Bernhard} dog carrying a can of drink.}\par
+        \ruledhbox{So, this is a \Periodic {Prof. Dr. S. Bernhard} dog carrying a can of drink.}\par
+    \egroup \egroup
+    \bgroup \vbox \bgroup
+        \red
+        \periodicshrink 450 %
+        \dontleavehmode
+        \ruledhbox{So, this is a           {S.           Bernhard} dog carrying a can of drink.}\par
+        \ruledhbox{So, this is a \periodic {S.           Bernhard} dog carrying a can of drink.}\par
+        \ruledhbox{So, this is a \Periodic {S.           Bernhard} dog carrying a can of drink.}\par
+        \ruledhbox{So, this is a           {St.          Bernhard} dog carrying a can of drink.}\par
+        \ruledhbox{So, this is a \periodic {St.          Bernhard} dog carrying a can of drink.}\par
+        \ruledhbox{So, this is a \Periodic {St.          Bernhard} dog carrying a can of drink.}\par
+        \ruledhbox{So, this is a           {Prof. Dr. S. Bernhard} dog carrying a can of drink.}\par
+        \ruledhbox{So, this is a \periodic {Prof. Dr. S. Bernhard} dog carrying a can of drink.}\par
+        \ruledhbox{So, this is a \Periodic {Prof. Dr. S. Bernhard} dog carrying a can of drink.}\par
+    \egroup \egroup
+\stopoverlay
+
+\stoptext

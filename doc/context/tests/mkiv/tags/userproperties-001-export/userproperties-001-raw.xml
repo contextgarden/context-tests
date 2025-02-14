@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<!--
+
+    input filename   : userproperties-001
+    processing date  : 2025-02-12 00:31:23+01:00
+    context version  : 2025.02.07 20:46
+    exporter version : 0.36
+
+-->
+
+<?xml-stylesheet type="text/css" href="styles/userproperties-001-defaults.css" ?>
+<?xml-stylesheet type="text/css" href="styles/userproperties-001-images.css" ?>
+<?xml-stylesheet type="text/css" href="styles/userproperties-001-fonts.css" ?>
+<?xml-stylesheet type="text/css" href="styles/userproperties-001-styles.css" ?>
+<document context="2025.02.07 20:46" date="2025-02-12 00:31:23+01:00" file="userproperties-001" language="en" title="userproperties-001" version="0.36" xml:lang="en">
+ <section detail="chapter" chain="chapter" implicit="1" level="2">
+  <sectioncaption>
+   <sectionnumber>1</sectionnumber>
+   <sectiontitle user_elementname="head">First Chapter</sectiontitle>
+  </sectioncaption>
+  <sectioncontent>
+(sectioncontent)  </sectioncontent>
+ </section>
+</document>

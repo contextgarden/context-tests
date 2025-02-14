@@ -1,0 +1,45 @@
+\starttext
+
+% rulecolor
+% rulethickness
+% moffset (empty: takes .5 spaceinbetween
+% toffset defaults to moffset
+% boffset defaults to moffset
+
+\startformula % \showmakeup[line]
+\startalign[n=10,align=*:middle,rulecolor=red]
+\NC   \NC 1001 \NC \rightarrow \NC 1000 \NC + \NC 000 \NC + \NC 00 \NC + \NC 1 \NR
+\NC + \NC 100  \NC \rightarrow \NC      \NC   \NC 100 \NC + \NC 00 \NC + \NC 0 \NR
+\HL[blue,2,green,.1ex,6,reset,8,blue,10]
+\NC   \NC      \NC \rightarrow \NC 1000 \NC + \NC 100 \NC + \NC 00 \NC + \NC 1 \NR
+\NC   \NC      \NC \rightarrow \NC 1101 \NC   \NC     \NC   \NC    \NC   \NC   \NR
+\HL
+\NC = \NC 1101 \NC             \NC      \NC   \NC     \NC   \NC    \NC   \NC   \NR
+\stopalign
+\stopformula
+
+\startformula % \showmakeup[line]
+\startalign[n=10,align=*:middle,rulecolor=red,moffset=.5ex]
+\NC   \NC 1001 \NC \rightarrow \NC 1000 \NC + \NC 000 \NC + \NC 00 \NC + \NC 1 \NR
+\NC + \NC 100  \NC \rightarrow \NC      \NC   \NC 100 \NC + \NC 00 \NC + \NC 0 \NR
+\HL[blue,2,green,.1ex,6,reset,8,blue,10]
+\NC   \NC      \NC \rightarrow \NC 1000 \NC + \NC 100 \NC + \NC 00 \NC + \NC 1 \NR
+\NC   \NC      \NC \rightarrow \NC 1101 \NC   \NC     \NC   \NC    \NC   \NC   \NR
+\HL
+\NC = \NC 1101 \NC             \NC      \NC   \NC     \NC   \NC    \NC   \NC   \NR
+\stopalign
+\stopformula
+
+\startformula % \showmakeup[line]
+\startalign[n=10,align=*:middle,rulecolor=red,toffset=.2ex,boffset=.4ex]
+\NC   \NC 1001 \NC \rightarrow \NC 1000 \NC + \NC 000 \NC + \NC 00 \NC + \NC 1 \NR
+\NC + \NC 100  \NC \rightarrow \NC      \NC   \NC 100 \NC + \NC 00 \NC + \NC 0 \NR
+\HL[blue,2,green,.1ex,6,reset,8,blue,10]
+\NC   \NC      \NC \rightarrow \NC 1000 \NC + \NC 100 \NC + \NC 00 \NC + \NC 1 \NR
+\NC   \NC      \NC \rightarrow \NC 1101 \NC   \NC     \NC   \NC    \NC   \NC   \NR
+\HL
+\NC = \NC 1101 \NC             \NC      \NC   \NC     \NC   \NC    \NC   \NC   \NR
+\stopalign
+\stopformula
+
+\stoptext

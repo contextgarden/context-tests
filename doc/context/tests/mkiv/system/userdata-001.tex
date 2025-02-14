@@ -1,0 +1,41 @@
+\continuewhenlmtxmode
+
+\nopdfcompression
+
+\starttext
+
+\startbuffer
+example:
+
+% \ctxlua{lpdf.setuserdata("test1",123)}
+% \ctxlua{lpdf.setuserdata("test2","foo")}
+
+\pdfsetuserdata{test1}{123}
+\pdfsetuserdata{test2}{foo}
+\stopbuffer
+
+\typebuffer \getbuffer
+
+\starttyping
+>mtxrun --script pdf --userdata=test1,test2 oeps.pdf
+123 foo
+
+>mtxrun --script pdf --userdata=test1,test2 oeps.pdf --format=lines
+test1=123
+test2=foo
+
+>mtxrun --script pdf --userdata=test1,test6,test2 oeps.pdf --format=json
+{
+ "test1" : "123",
+ "test2" : "foo"
+}
+
+>mtxrun --script pdf --userdata=test1,test6,test2 oeps.pdf --format=lua
+userdata={
+ ["test1"]="123",
+ ["test2"]="foo",
+}
+\stoptyping
+
+\stoptext
+

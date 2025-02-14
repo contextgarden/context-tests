@@ -1,0 +1,28 @@
+% by wolfgang
+
+\definenarrower[wider]   [before={\blank[2*line]},after={\blank[2*line]},middle=0.5em]
+\definenarrower[narrowed][before={\blank[4*line]},after={\blank[4*line]},middle=4.0em]
+
+\starttext
+
+\input ward
+
+\startnarrower
+\input ward\endgraf
+\stopnarrower
+
+\input ward
+
+\startnarrowed
+\input ward\endgraf
+\stopnarrowed
+
+\input ward
+
+\startwider
+\input ward\endgraf
+\stopwider
+
+\input ward
+
+\stoptext

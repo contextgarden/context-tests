@@ -1,0 +1,29 @@
+\setuplayout[tight]
+
+\enabletrackers[tabulate.spacing]
+
+\starttext
+
+\starttabulate[|p|p|]
+\NC \showboxes
+    \samplefile{ward}
+    \blank
+    \samplefile{knuth}
+    \blank
+    \samplefile{tufte}
+\NC \showboxes
+    \samplefile{ward}
+    \blank
+    \samplefile{tufte}
+    \blank
+    \samplefile{knuth}
+\NC \NR
+\NC \showboxes
+    \dorecurse{6}{\samplefile{ward}\par}
+\NC \showboxes
+    \dorecurse{4}{\samplefile{tufte}\par}
+\NC \NR
+\stoptabulate
+
+\stoptext
+

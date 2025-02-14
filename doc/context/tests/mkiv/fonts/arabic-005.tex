@@ -1,0 +1,16 @@
+\definefontfeature[arabix][arabic][zeromarks=yes]
+
+\definefont [Ahang] [file:Ahang-Regular.otf*arabic at 18pt]
+\definefont [Bhang] [file:Tahrir_Regular.otf*arabix at 18pt]
+
+\setupalign[r2l]
+
+\starttext % \showglyphs
+    {\Ahang تَشْكِيل كَسْرَة}\par % no widths defined for marks
+    {\Bhang تَشْكِيل كَسْرَة}\par % wrong widths for marks
+    {\Ahang\glyphweight 120 \glyphxscale 1200 تَشْكِيل كَسْرَة}\par % no widths defined for marks
+    {\Bhang\glyphweight 120 \glyphxscale 1200 تَشْكِيل كَسْرَة}\par % wrong widths for marks
+    {\Ahang\glyphweight 120  تَشْكِيل كَسْرَة}\par % no widths defined for marks
+    {\Bhang\glyphweight 120  تَشْكِيل كَسْرَة}\par % wrong widths for marks
+\stoptext
+

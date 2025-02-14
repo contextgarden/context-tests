@@ -1,0 +1,21 @@
+\starttext
+
+\startbuffer
+\startformula
+  4 \alignhere = 2 \unstacking[1]{+}                2 \breakhere
+  4 \alignhere = 2 \unstacking[2]{+\unstacking{!}}  2 \breakhere
+  4 \alignhere = 2 \unstacking[2]{+\unstacking{!}+} 2
+\stopformula
+\stopbuffer
+
+                   \getbuffer \blank[2*big]
+\hidestacking[1]   \getbuffer \blank[2*big]
+\hidestacking[2]   \getbuffer \blank[2*big]
+\hidestacking[1:2] \getbuffer \page
+
+                   \getbuffer \blank[2*big]
+\videstacking[1]   \getbuffer \blank[2*big]
+\videstacking[2]   \getbuffer \blank[2*big]
+\videstacking[1:2] \getbuffer \page
+
+\stoptext

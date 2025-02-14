@@ -1,0 +1,29 @@
+\continuewhenlmtxmode
+
+% \definebar[mathbackground][backgroundbar][continue=always,max=1,height=\strutht,depth=\strutdp]
+
+\definebar[mybar]  [mathbackground][offset=.250ex,color=red]
+\definebar[yourbar][mathbackground][offset=.125ex,color=blue]
+\definebar[ourbar] [mathbackground][offset=.125ex,color=green]
+
+\starttext
+
+\startTEXpage[width=4cm]
+    \startformula
+                a \alignhere= b + c \breakhere
+        \mybar {d + \yourbar{e \alignhere=} f_3^2 \breakhere
+                g \alignhere \ourbar{=} h} + i
+    \stopformula
+\stopTEXpage
+
+\samplefile{knuth}
+\startformula
+    \text{something} + \text{really} + \text{really} + \text{long} \alignhere= \sqrt{x} \numberhere
+    \texthere[inbetween]{\input{knuth}}
+    d \alignhere= e + f \numberhere \breakhere
+    g \alignhere= h + i \breakhere
+    j \alignhere= k + l
+\stopformula
+\samplefile{knuth}
+
+\stoptext

@@ -1,0 +1,18 @@
+% This can be used for tracing:
+
+\defineinteraction[i1][color=darkgreen,style=\outlined]
+\defineinteraction[i2][color=darkred,  style=\outline]
+\defineinteraction[i3][color=darkblue, style=\outlined]
+
+\setupinteraction[state=start]
+
+\starttext
+    \startTEXpage[offset=1dk, align=middle]
+        \namedgoto[i1]{chapter}[a]\blank
+        \namedgoto[i2]{chapter}[b]\blank
+        \namedgoto[i3]{website}[url(http://www.contextgarden.net)]\blank
+    \stopTEXpage
+
+    \chapter[a]{First  chapter}
+    \chapter[b]{Second chapter}
+\stoptext

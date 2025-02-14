@@ -1,0 +1,105 @@
+\setupheadertexts[the header text]
+\setupfootertexts[a pretty long left footer text][something footer right]
+\setupbottomtexts[a not so long left bottom text][another right footer thing]
+\setuptexttexts  [margin][something marginal][indeed]
+
+\startsetups pagelayout:table:left
+    \setupTABLE[offset=overlay]%
+    \setupTABLE[c][1][width=\leftmarginwidth]%
+    \setupTABLE[c][2][width=\textwidth]%
+    \setupTABLE[c][3][width=\rightmarginwidth]%
+\stopsetups
+
+\startsetups pagelayout:table:right
+    \setupTABLE[offset=overlay]%
+    \setupTABLE[c][1][width=\leftmarginwidth]%
+    \setupTABLE[c][2][width=\textwidth]%
+    \setupTABLE[c][3][width=\rightmarginwidth]%
+\stopsetups
+
+\startpagelayout[leftpage]
+  \directsetup{pagelayout:table:left}%
+  \bTABLE
+    \bTR
+      \bTD[nx=3,background=color,backgroundcolor=green]
+        \pagearea[header][text][middle]
+      \eTD
+    \eTR
+    \bTR
+      \bTD \pagearea[text][margin][left] \eTD
+      \bTD[nx=2] \pagearea[text] \eTD
+    \eTR
+    \bTR
+      \bTD[nx=3,offset=overlay]
+        {\directsetup{pagelayout:table:left}%
+         \bTABLE
+           \bTR
+             \bTD[nx=2] \pagearea[footer][text][left] \eTD
+             \bTD \pagearea[bottom][text][left] \eTD
+           \eTR
+         \eTABLE}
+       \eTD
+    \eTR
+  \eTABLE
+\stoppagelayout
+
+\startpagelayout[rightpage]
+  \directsetup{pagelayout:table:right}%
+  \bTABLE
+    \bTR
+      \bTD[nx=3] \pagearea[header][text][middle] \eTD
+    \eTR
+    \bTR
+      \bTD \pagearea[text][margin][left] \eTD
+      \bTD[nx=2] \pagearea[text] \eTD
+    \eTR
+    \bTR
+      \bTD[nx=3,offset=overlay]
+        {\directsetup{pagelayout:table:right}%
+         \bTABLE
+           \bTR
+             \bTD \pagearea[bottom][text][right] \eTD
+             \bTD[nx=2] \pagearea[footer][text][right] \eTD
+           \eTR
+         \eTABLE}
+      \eTD
+    \eTR
+  \eTABLE
+\stoppagelayout
+
+\startpagelayout[page]
+    \pagelayout[rightpage]
+\stoppagelayout
+
+\enabletrackers[pagelayout]
+
+\setuppagenumbering[alternative=doublesided,location=middle]
+
+\setuplayout
+  [alternative=makeup,
+   backspace=15mm,
+   cutspace=20mm,
+   leftmargin=15mm,
+   rightmargin=25mm,
+   topspace=0pt,
+   width=10cm]
+
+\definetextbackground
+  [test]
+  [state=start,
+   background=color,
+   backgroundcolor=yellow]
+
+\starttext
+
+    \dorecurse{10}{\samplefile{tufte}\par}
+
+    \samplefile{tufte} \starttest \samplefile{tufte} \stoptest \samplefile{tufte}
+
+    \starttabulate
+    \NC test \NC \starttest \samplefile{tufte} \stoptest \NC \NR
+    \stoptabulate
+
+    \dorecurse{10}{\samplefile{tufte}\par}
+
+\stoptext

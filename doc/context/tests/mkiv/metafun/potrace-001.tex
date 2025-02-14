@@ -1,0 +1,42 @@
+\continuewhenlmtxmode
+
+% posted by MS as answer to excessive curve drawing
+
+\startluacode
+    local exp   = math.exp
+    local N     = 1000
+    local xstep = 1.6/N
+    local ystep = 1.8/N
+    local xmin  = 0.3
+    local ymin  = 0.4
+
+    local function f(x,y)
+        local x = xstep*x - xmin
+        local y = ystep*y - ymin
+        local z = x + exp(-60*x) - y
+        if z > 0 then
+            return '1'
+        else
+            return '0'
+        end
+    end
+
+    potrace.setbitmap("mybitmap", potrace.contourplot(N,N,f))
+\stopluacode
+
+\startMPpage[offset=1dk]
+    path p ; p := lmt_potraced [
+        stringname = "mybitmap",
+        value      = "1",
+        tolerance  = 0.1,
+        threshold  = 0.2,
+        optimize   = true,
+    ] ;
+    p := p xsized 10cm ;
+    draw p withpen pencircle scaled 5 withcolor "darkblue" ;
+    drawpoints p withcolor "orange" ;
+    drawpointlabels p ;
+    p := subpath(6,19) of p ;
+    draw p withpen pencircle scaled 3 withcolor "yellow" ;
+\stopMPpage
+

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<!--
+
+    input filename   : export-010
+    processing date  : 2025-02-12 00:31:12+01:00
+    context version  : 2025.02.07 20:46
+    exporter version : 0.36
+
+-->
+
+<?xml-stylesheet type="text/css" href="styles/export-010-defaults.css" ?>
+<?xml-stylesheet type="text/css" href="styles/export-010-images.css" ?>
+<?xml-stylesheet type="text/css" href="styles/export-010-fonts.css" ?>
+<?xml-stylesheet type="text/css" href="styles/export-010-styles.css" ?>
+<document context="2025.02.07 20:46" date="2025-02-12 00:31:12+01:00" file="export-010" language="en" title="export-010" version="0.36" xml:lang="en">
+test 
+ <formula>
+  <formulacontent image="export-010-image-1" n="1">
+   <math data-lmtx-blob="1" data-lmtx-meaning="integral from 2 to 1 , of 𝑓 prime of group 𝑥 end group differential d 𝑥 equals 𝑓 times group 𝑏 end group minus 𝑓 times group 𝑎 end group" display="block" displaystyle="true" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msubsup>
+   <mo stretchy="true">∫</mo>
+   <mn>2</mn>
+   <mn>1</mn>
+  </msubsup>
+  <msup>
+   <mi>𝑓</mi>
+   <mo>′</mo>
+  </msup>
+  <mo stretchy="false">(</mo>
+  <mi>𝑥</mi>
+  <mo stretchy="false">)</mo>
+  <mi>𝑑</mi>
+  <mi>𝑥</mi>
+  <mo>=</mo>
+  <mi>𝑓</mi>
+  <mo stretchy="false">(</mo>
+  <mi>𝑏</mi>
+  <mo stretchy="false">)</mo>
+  <mo>−</mo>
+  <mi>𝑓</mi>
+  <mo stretchy="false">(</mo>
+  <mi>𝑎</mi>
+  <mo stretchy="false">)</mo>
+ </mrow>
+   </math>
+  </formulacontent>
+  </formula>
+test 
+ <formula>
+  <formulacontent image="export-010-image-2" n="2">
+   <math data-lmtx-blob="2" data-lmtx-meaning="the square root of group 𝑓 prime of group 𝑥 end group differential d 𝑥 equals 𝑓 times group 𝑏 end group minus 𝑓 times group 𝑎 end group end group" display="block" displaystyle="true" xmlns="http://www.w3.org/1998/Math/MathML">
+ <msqrt>
+  <mrow>
+   <msup>
+    <mi>𝑓</mi>
+    <mo>′</mo>
+   </msup>
+   <mo stretchy="false">(</mo>
+   <mi>𝑥</mi>
+   <mo stretchy="false">)</mo>
+   <mi>𝑑</mi>
+   <mi>𝑥</mi>
+   <mo>=</mo>
+   <mi>𝑓</mi>
+   <mo stretchy="false">(</mo>
+   <mi>𝑏</mi>
+   <mo stretchy="false">)</mo>
+   <mo>−</mo>
+   <mi>𝑓</mi>
+   <mo stretchy="false">(</mo>
+   <mi>𝑎</mi>
+   <mo stretchy="false">)</mo>
+  </mrow>
+ </msqrt>
+   </math>
+  </formulacontent>
+  </formula>
+test 
+ <formula>
+  <formulacontent image="export-010-image-3" n="3">
+   <math data-lmtx-blob="3" data-lmtx-meaning="the fraction of 𝑓 group 𝑏 end group and denominator 𝑓 group 𝑎 end group end denominator" display="block" displaystyle="true" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mfrac>
+  <mrow>
+   <mi>𝑓</mi>
+   <mo stretchy="false">(</mo>
+   <mi>𝑏</mi>
+   <mo stretchy="false">)</mo>
+  </mrow>
+  <mrow>
+   <mi>𝑓</mi>
+   <mo stretchy="false">(</mo>
+   <mi>𝑎</mi>
+   <mo stretchy="false">)</mo>
+  </mrow>
+ </mfrac>
+   </math>
+  </formulacontent>
+ </formula>
+</document>

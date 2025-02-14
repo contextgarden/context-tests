@@ -1,0 +1,52 @@
+\continuewhenlmtxmode
+
+\starttext
+
+\startluacode
+    local shapes = { }
+    shapes[1] = { {0,0}, {-1,-1}, {-1, 0}, {0,0}, "cycle" }
+    shapes[2] = { {0,1}, { 1, 0}, { 1,-1}, {0,1}, "cycle" }
+    shapes[3] = { {0,2}, { 2, 0}, { 2, 1}, {0,2}, "cycle" }
+    shapes[4] = {
+        {0,0}, {-1,-1}, {-1, 0}, {0,0}, "cycle", "append",
+        {0,1}, { 1, 0}, { 1,-1}, {0,1}, "cycle", "append",
+        {0,2}, { 2, 0}, { 2, 1}, {0,2}, "cycle", "append",
+    }
+    shapes[5] = {
+        { path = shapes[1], append = true },
+        { path = shapes[2], append = true },
+        { path = shapes[3], append = true },
+    }
+    function mp.getshapepath(n)
+        mp.inject.path(shapes[n])
+    end
+\stopluacode
+
+\startMPpage
+    path p ;
+    p := lua.mp.getshapepath(1) scaled 1cm ;
+    draw p withpen pencircle scaled 2pt withcolor red ;
+    p := lua.mp.getshapepath(2) scaled 1cm ;
+    draw p withpen pencircle scaled 2pt withcolor blue ;
+    p := lua.mp.getshapepath(3) scaled 1cm ;
+    draw p withpen pencircle scaled 2pt withcolor green ;
+    p := lua.mp.getshapepath(4) scaled 1cm &&cycle ;
+%     show(p);
+    fill p withcolor 0.9 ;
+    draw p withpen pencircle scaled 1pt withcolor 0.7 ;
+    p := lua.mp.getshapepath(5) scaled 1cm
+    ;
+    draw p withpen pencircle scaled .25pt withcolor 0.2 ;
+%     show(p);
+\stopMPpage
+
+% \startMPpage
+%     path p ;
+%     p := lua.mp.getshapepath(1) scaled 1cm &&
+%          lua.mp.getshapepath(2) scaled 1cm &&
+%          lua.mp.getshapepath(3) scaled 1cm ;
+%     draw p withpen pencircle scaled 1pt withcolor 0.7 ;
+%     show(p);
+% \stopMPpage
+
+\stoptext

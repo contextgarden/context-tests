@@ -1,0 +1,21 @@
+\continuewhenlmtxmode
+
+\starttext
+
+\newconditional\foocondition
+
+\ifconditional\foocondition YES \else NOP \fi
+\startluacode
+    print(tex.conditionals["foocondition"] and "YES" or "NOP")
+    tex.setconditional("foocondition",true)
+    print(tex.conditionals["foocondition"] and "YES" or "NOP")
+\stopluacode
+\ifconditional\foocondition YES \else NOP \fi
+\startluacode
+    print(tex.conditionals["foocondition"] and "YES" or "NOP")
+    tex.setconditional("foocondition")
+    print(tex.conditionals["foocondition"] and "YES" or "NOP")
+\stopluacode
+\ifconditional\foocondition YES \else NOP \fi
+
+\stoptext

@@ -1,0 +1,17 @@
+% example by WS
+
+\definestartstop
+  [HeadCommand]
+  [arguments=yes]
+
+\definedescription
+  [description]
+  [alternative=serried,
+   width=fit,
+   headcommand=\HeadCommand[right=:]]
+
+\starttext
+    \startdescription [title=Lorem ipsum]
+        \samplefile{lorem}
+    \stopdescription
+\stoptext

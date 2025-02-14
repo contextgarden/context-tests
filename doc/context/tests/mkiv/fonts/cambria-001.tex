@@ -1,0 +1,18 @@
+\definehighlight[somefrac][style=\addff{f:fractions}]
+
+\starttexdefinition myfrac #1 #2
+  \bgroup\feature[+]{f:fractions}#1/#2\egroup
+ %\bgroup\addff{f:fractions}#1/#2\egroup
+\stoptexdefinition
+
+\setupbodyfont[cambria]
+
+\startTEXpage[offset=3BP]
+
+    1 and 3 or 1/3 or  \myfrac {1}{3} or 12/58 or \myfrac{12}{58} or \somefrac{12/58}
+
+    {\italic 1 and 3 or 1/3 or  \myfrac {1}{3} or 12/58 or \myfrac{12}{58} or \somefrac{12/58}}
+
+\stopTEXpage
+
+

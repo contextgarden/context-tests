@@ -1,0 +1,18 @@
+\continuewhenlmtxmode
+
+\startMPpage
+
+    path p ; p := fullcircle scaled 10cm ;
+    fill p withcolor red ;
+    draw p withpen pencircle scaled 1mm withcolor green ;
+
+    for i within p :
+        draw pathpoint       withpen pencircle scaled 3mm ;
+        draw pathprecontrol  withpen pencircle scaled 1mm ;
+        draw pathpostcontrol withpen pencircle scaled 1mm ;
+        draw textext(decimal i) shifted  .6[deltapoint -2,origin] ;
+        draw textext(decimal i) shifted  .4[pathpoint    ,origin] withcolor blue ;
+        draw textext(decimal i) shifted  .2[deltapoint  2,origin] ;
+    endfor ;
+
+\stopMPpage

@@ -1,0 +1,11 @@
+% for mikael ...
+
+\startTEXpage[offset=1ts,width=3em] % we need to prevent autosize
+    \setbox0=\hbox to20pt{a\hskip0pt plus10pt a\hskip0pt plus10pt}
+    \setbox2=\copy0
+
+    \boxfreeze 2 0 % 0 = not recursive
+
+    \ruledhbox{\box0}
+    \ruledhbox{\unhbox2\unskip}
+\stopTEXpage

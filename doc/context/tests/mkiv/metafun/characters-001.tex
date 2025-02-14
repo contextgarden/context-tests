@@ -1,0 +1,39 @@
+\continuewhenlmtxmode
+
+\startMPcalculation{simplefun}
+
+    vardef QuotationDash =
+        draw image (
+            interim linecap := squared ;
+            save l ; l := 0.2 ;
+            draw (l/2,2) -- (15-l/2,2) withpen pencircle scaled l ;
+        )
+    enddef ;
+
+    lmt_registerglyphs [
+        name     = "symbols",
+        units    = 10,
+        usecolor = true,
+        width    = 15,
+        height   = 2.1,
+        depth    = 0,
+    ] ;
+
+    lmt_registerglyph [ category = "symbols", unicode = "0x2015", code  = "QuotationDash ;" ] ;
+
+\stopMPcalculation
+
+\definefontfeature[default][default][metapost=symbols]
+
+% \showglyphs
+
+\starttext
+
+\startlines
+xx\endash        xx
+xx\emdash        xx
+xx\endash\emdash xx
+xx\char"2015     xx
+\stoplines
+
+\stoptext

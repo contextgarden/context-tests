@@ -1,0 +1,24 @@
+% posted by MS to the list
+
+\starttext
+
+\startformula
+  \abs{x} =
+  \startcases
+    \NC  x, \NC x > 0; \NR
+    \NC  0, \NC x = 0; \NR
+    \NC -x, \NC x < 0. \NR
+  \stopcases
+  \numberhere[eq:foo]
+\stopformula
+
+\startformula
+  \startalign
+    [location=packed,fences=cases]
+    \NC \[21-(9 - n^2)\NC =□^\prime\]\NR
+    \NC  n^2+12 \NC=□^\prime.        \NR
+  \stopalign
+  \numberhere[eq:foo]
+\stopformula
+
+\stoptext

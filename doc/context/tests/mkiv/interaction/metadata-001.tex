@@ -1,0 +1,36 @@
+\continuewhenlmtxmode
+
+\startbuffer[demo]
+<doc><meta><author>author is me</author><title>title</title></meta><text>text</text></doc>
+\stopbuffer
+
+\startTEXpage
+
+\startxmlsetups xml:initialize
+    \xmlsetsetup{#1}{code|meta|text}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:initialize}
+
+\startxmlsetups xml:doc
+    \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:meta
+\setupmetadata
+  [author={\xmltext{#1}{/author}},
+   title={\xmltext{#1}{/title}}]
+\stopxmlsetups
+
+
+\startxmlsetups xml:text
+ \xmlflush{#1}
+\stopxmlsetups
+
+\setupinteraction[state=start]
+
+\xmlprocessbuffer{main}{demo}{}
+
+% \foo
+
+\stopTEXpage

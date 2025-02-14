@@ -1,0 +1,63 @@
+\startTEXpage[offset=1cm]
+
+\startluacode
+
+local typefaces = {
+        -- "adventor",
+            -- "antykwa-poltawskiego",
+            -- "antykwa-torunska",
+    "bonum",
+        -- "cambria",
+            -- "chorus",
+            -- "cursor",
+        -- "ebgaramond",
+        -- "erewhon",
+        -- "gentium",
+    "heros",
+        -- "iwona",
+    "kpfonts",
+            -- "kurier",
+        -- "libertinus",
+  "lucida",
+  "modern",
+        -- "pagella",
+        -- "plex",
+  "schola",
+        -- "stixtwo",
+  "termes",
+        -- "xcharter",
+}
+
+context.starttabulate { "||||||" }
+for _, typeface in next, typefaces do
+  context.NC()
+    context.switchtobodyfont({typeface})
+    context(typeface)
+    context.NC()
+      context.switchtobodyfont({typeface})
+      context.ruledhbox("1'")
+      context.space()
+      context.ruledhbox("1\\minute")
+    context.NC()
+      context.switchtobodyfont({typeface})
+      context.ruledhbox('1"')
+      context.space()
+      context.ruledhbox("1\\second")
+  context.NC()
+    context.switchtobodyfont({typeface})
+    context.ruledhbox("\\bf1'")
+    context.space()
+    context.ruledhbox("\\bf1\\minute")
+  context.NC()
+    context.switchtobodyfont({typeface})
+    context.ruledhbox('\\bf1"')
+    context.space()
+    context.ruledhbox("\\bf1\\second")
+  context.NC()
+  context.NR()
+end
+context.stoptabulate()
+
+\stopluacode
+
+\stopTEXpage

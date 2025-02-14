@@ -1,0 +1,25 @@
+\continuewhenlmtxmode
+
+\startMPpage
+
+path p; p := (fullsquare scaled 3cm && fullsquare rotated 45 scaled 2cm && cycle) ;
+
+for i within p :
+    message(
+            "index "       & decimal  pathindex
+        & ", lastindex "   & decimal  pathlastindex
+        & ", length "      & decimal  pathlength
+        & ", first "       & if       pathfirst : "true" else : "false" fi
+        & ", last "        & if       pathlast  : "true" else : "false" fi
+        & ", state "       & decimal  pathstate
+        & ", point "       & ddecimal pathpoint
+        & ", postcontrol " & ddecimal pathprecontrol
+        & ", precontrol "  & ddecimal pathpostcontrol
+        & ", direction "   & ddecimal pathdirection
+        & ", delta "       & ddecimal deltapoint 1
+    );
+endfor ;
+
+eofill p ;
+
+\stopMPpage

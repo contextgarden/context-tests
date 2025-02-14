@@ -1,0 +1,34 @@
+\starttext
+
+\showboxes
+
+\startbuffer
+    \startformula
+      A = B
+    \stopformula
+
+    \startplaceformula \startformula
+      A = B
+    \stopformula \stopplaceformula
+
+    \startformula \startalign
+      \NC A \EQ B \NR
+      \NC A \EQ B \NR
+    \stopalign \stopformula
+
+    \startplaceformula \startformula \startalign
+      \NC A \EQ B \NR[+]
+      \NC A \EQ B \NR[+]
+    \stopalign \stopformula \stopplaceformula
+\stopbuffer
+
+\startbuffer[all]
+    \section[title=middle] \setupmathalignment[location={center,middle}] \getbuffer
+    \section[title=left]   \setupmathalignment[location={center,left}]   \getbuffer
+    \section[title=right]  \setupmathalignment[location={center,right}]  \getbuffer
+\stopbuffer
+
+{\setupformula[location=right] \getbuffer[all] \page}
+{\setupformula[location=left]  \getbuffer[all] \page}
+
+\stoptext

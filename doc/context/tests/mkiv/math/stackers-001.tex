@@ -1,0 +1,24 @@
+% \definemathstackers[toprel][top][mathclass=\mathrelationcode]
+% \definemathstackers[topbin][top][mathclass=\mathbinarycode]
+
+% \definemathextensible[toprel][frownedupon]["2322]
+% \definemathextensible[topbin][frowned]    ["2322]
+
+\definemathaccent[topfake][top][offset=auto]
+
+\definemathtopaccent[topfake][frowned]["2322]
+\definemathtopaccent[topfake][Frowned]["23DC]
+
+\starttext
+%     $x \frownedupon{4} y + \frowned{!} z = 10$
+
+    $ x + \frowned{4} = 10$
+
+    $ x + \Frowned{4} = 10$
+
+    $ x + \Frowned{4444} = 10$
+
+    $ x + \overparent{4} = 10$
+
+    $ x + \overparent{4444} = 10$
+\stoptext

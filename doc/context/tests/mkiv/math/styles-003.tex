@@ -1,0 +1,59 @@
+\starttext
+
+\def\foo{(\the\mathmainstyle,\the\mathstyle)}
+\def\oof{\sqrt[\foo]{\foo}}
+\def\ofo{\frac{\foo}{\foo}}
+
+\startlines
+$\displaystyle      d:\foo + \oof + \ofo$
+$\textstyle         i:\foo + \oof + \ofo$
+$\displaystyle      d:\foo + \mathchoice{\foo}{\foo}{\foo}{\foo}$
+$\textstyle         i:\foo + \mathchoice{\foo}{\foo}{\foo}{\foo}$
+$\scriptstyle       d:\foo + \mathchoice{\foo}{\foo}{\foo}{\foo}$
+$\scriptscriptstyle i:\foo + \mathchoice{\foo}{\foo}{\foo}{\foo}$
+\stoplines
+
+\startlines
+\Ustartmathmode \displaystyle      d:\foo + \oof + \ofo \Ustopmathmode
+\Ustartmathmode \textstyle         i:\foo + \oof + \ofo \Ustopmathmode
+\Ustartmathmode \displaystyle      d:\foo + \mathchoice{\foo}{\foo}{\foo}{\foo} \Ustopmathmode
+\Ustartmathmode \textstyle         i:\foo + \mathchoice{\foo}{\foo}{\foo}{\foo} \Ustopmathmode
+\Ustartmathmode \scriptstyle       d:\foo + \mathchoice{\foo}{\foo}{\foo}{\foo} \Ustopmathmode
+\Ustartmathmode \scriptscriptstyle i:\foo + \mathchoice{\foo}{\foo}{\foo}{\foo} \Ustopmathmode
+\stoplines
+
+\startlines
+\im{i:\foo}
+\dm{d:\foo}
+\stoplines
+
+\startlines
+\Ustartmath i:\foo \Ustopmath
+\Ustartdisplaymath d:\foo \Ustopdisplaymath
+\stoplines
+
+\startlines
+\startimath i:\foo \stopimath
+\startdmath d:\foo \stopdmath
+\stoplines
+
+\startforceddisplaymath d:\foo \stopforceddisplaymath
+
+% display text script scriptscript
+% uncramped cramped normal packed
+% small big
+
+\startlines
+\m{x\foo}
+\m[mathstyle=text]{x\foo}
+\m[mathstyle={cramped,text}]{x\foo}
+\m[mathstyle=scriptscript]{x\foo \scriptstyle\foo}
+\stoplines
+
+% \ifcramped\mathstyle        no  \fi
+% \ifcramped\crampedtextstyle yes \fi
+% \ifcramped\textstyle        no  \fi
+% \ifcramped\displaystyle     yes \fi
+
+\stoptext
+

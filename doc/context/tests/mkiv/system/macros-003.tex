@@ -1,0 +1,15 @@
+\starttext
+
+\tolerant\protected\def\MyMacro[#1]#:#2%
+  {\parameterdef\MyArgumentOne\plusone
+   \parameterdef\MyArgumentTwo\plustwo
+   \ifparameter\MyArgumentOne\or
+     (\MyArgumentOne)
+   \fi
+   /\MyArgumentTwo/}
+
+\MyMacro[one]{two}
+
+\MyMacro{two}
+
+\stoptext

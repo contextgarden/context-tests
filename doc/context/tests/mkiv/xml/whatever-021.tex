@@ -1,0 +1,42 @@
+% >mutool draw -F txt whatever-021.pdf
+% \StartSomething
+% \StartWhat
+% test
+% \StopWhat
+% \StopSomething
+
+\startbuffer[test]
+<something>
+    <what>
+        test
+    </what>
+</something>
+\stopbuffer
+
+\startxmlsetups xml:mysetups
+    \xmlsetsetup{\xmldocument}{*}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:mysetups}
+
+\startxmlsetups xml:something
+    \tex{StartSomething}\par
+    \xmlflush{#1}\par
+    \tex{StopSomething}\par
+\stopxmlsetups
+
+\startxmlsetups xml:what
+    \tex{StartWhat}\par
+    \xmlflush{#1}\par
+    \tex{StopWhat}\par
+\stopxmlsetups
+
+\setuppapersize[A1]
+\setupbodyfont[dejavu,ss,1pt]
+\setuplayout[tight]
+\setupalign[verytolerant,flushleft,nothyphenated]
+
+\starttext
+    \xmlprocessbuffer{main}{test}{}
+\stoptext
+

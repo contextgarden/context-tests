@@ -1,0 +1,12 @@
+\continuewhenlmtxmode
+
+\startTEXpage[offset=1ts]
+    \samplefile{tufte}\removeunwantedspaces\space
+    \startshadow[contrastcolor=red,weight=100]\blue\samplefile{tufte}\removeunwantedspaces\stopshadow\space
+    \samplefile{tufte}\removeunwantedspaces\space
+    \startshadow[contrastcolor=red,weight=100,dx=0,dy=0]\blue\samplefile{tufte}\removeunwantedspaces\stopshadow\space
+    \samplefile{tufte}
+    \blank
+    \setupshadows[shadowed][unit=pt,dx=.5,dy=-.5,weight=200]
+    \shadowed{\bfd Tufte\setstrut\strut}
+\stopTEXpage

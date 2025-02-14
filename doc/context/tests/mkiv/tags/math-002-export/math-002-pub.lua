@@ -1,0 +1,16 @@
+return {
+ ["htmlfiles"]={ "math-002-div.html" },
+ ["htmlroot"]="math-002-div.html",
+ ["identifier"]="966109a3-4765-8f4f-4abd-1bb2f6cc81be",
+ ["imagefile"]="styles/math-002-images.css",
+ ["imagepath"]="images",
+ ["images"]={},
+ ["language"]="en",
+ ["metadata"]={},
+ ["name"]="math-002",
+ ["stylepath"]="styles",
+ ["styles"]={ "math-002-defaults.css", "math-002-images.css", "math-002-fonts.css", "math-002-styles.css" },
+ ["title"]="math-002",
+ ["xhtmlfiles"]={ "math-002-tag.xhtml" },
+ ["xmlfiles"]={ "math-002-raw.xml" },
+}

@@ -1,0 +1,37 @@
+\definelayout
+  [one]
+  [header=0TS]
+
+\definelayout
+  [two]
+  [backspace=1.5ES,
+   topspace=1ES,
+   bottomspace=1.5ES,
+   margin=0TS,
+   header=10TS,
+   headerdistance=2TS,
+   footer=\lineheight,
+   footerdistance=3TS,
+   edgedistance=5TS,
+   location=middle,
+   width=fit,
+   height=fit]
+
+\showframe
+
+\definelayout[2][two]
+
+\setuplayout[one]
+
+\starttext
+
+\startitemize[n]
+  \dorecurse{100}{
+    \startitem
+        This is just a short sentence, it is in fact number \recurselevel. What
+        do we see? Well, we do not see much, but we like what we see.
+    \stopitem
+  }
+\stopitemize
+
+\stoptext

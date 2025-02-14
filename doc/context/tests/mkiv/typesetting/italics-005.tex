@@ -1,0 +1,22 @@
+\continuewhenlmtxmode
+
+\enabletrackers[typesetters.italics]
+
+\showglyphs \showfontitalics \showfontkerns
+
+\setupbodyfont[bonum]
+
+\startTEXpage[offset=1ts,width=6em]
+    \dontleavehmode
+    \ruledhbox{\it\shapecorrection[both] f}\quad
+    \ruledhbox{\it\shapecorrection[both]ff}
+    \blank
+    \setupitaliccorrection[italic]
+    \dontleavehmode
+    \ruledhbox{\it\shapecorrection[both] f}\quad
+    \ruledhbox{\it\shapecorrection[both]ff}
+    \blank
+    \dontleavehmode
+    \ruledhbox{x{\it\shapecorrection[both] f}x}\quad
+    \ruledhbox{x{\it\shapecorrection[both]ff}x}
+\stopTEXpage

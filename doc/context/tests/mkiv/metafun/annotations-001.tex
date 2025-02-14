@@ -1,0 +1,14 @@
+\nopdfcompression
+
+% \enabledirectives[metapost.annotations=actual]      % default
+% \enabledirectives[metapost.annotations=alternative]
+
+\starttext
+
+\startMPpage[offset=1mm]
+    fill fullcircle   xsized 4cm withcolor "darkred"   withannotation "Oh, a circle." ;
+    fill fullsquare   xsized 2cm withcolor "darkgreen" withannotation "Is this a square?" ;
+    fill fulltriangle xsized 1cm withcolor "darkblue"  withannotation "This definitely is a triangle!" ;
+\stopMPpage
+
+\stoptext

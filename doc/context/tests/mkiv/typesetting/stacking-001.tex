@@ -1,0 +1,30 @@
+\starttext
+
+\definestacking[one]
+\definestacking[two]
+
+\startbuffer
+This is a test \stacking [one] {and a proof} of \stacking [two] {concept} indeed
+\stacking [one] {\blackrule [width=4cm]} is it and the question is how \stacking
+[two] {\scale [s=2] {fancy}} we can go
+
+\startstacking[one]
+\startformula
+    \sqrt{1+x}
+\stopformula
+\stopstacking
+
+and how useful \stacking[two]{\inframed{it}} is.
+\stopbuffer
+
+\startstackingsteps[one,two,{one,two}]
+    \startTEXpage[offset=1ts]
+        \getbuffer
+    \stopTEXpage
+\stopstackingsteps
+
+\startTEXpage[offset=1ts] \setupstacking[criterium={one}]     \getbuffer \stopTEXpage
+\startTEXpage[offset=1ts] \setupstacking[criterium={two}]     \getbuffer \stopTEXpage
+\startTEXpage[offset=1ts] \setupstacking[criterium={one,two}] \getbuffer \stopTEXpage
+
+\stoptext

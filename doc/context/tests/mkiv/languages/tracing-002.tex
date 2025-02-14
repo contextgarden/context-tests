@@ -1,0 +1,16 @@
+\starttext
+
+\start
+    \showdiscretionaries
+    \dorecurse{100}{test \discretionary{one}{two}{three} test #1 }
+    \blank
+\stop
+
+\start
+    \showmakeup[discretionary]
+    \input tufte
+    \blank
+    foo-bar foo---bar foo\-bar foo\discretionary{<}{>}{=}bar
+\stop
+
+\stoptext

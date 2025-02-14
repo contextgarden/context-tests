@@ -1,0 +1,15 @@
+\starttext
+
+\definedfont[file:notoserifcjkjpregular*default]
+
+\starttabulate[|||||]
+\expandedrepeat 48 {
+  \NC \convertnumber{hiragana}{\currentloopiterator}
+  \NC \ifnum\currentloopiterator < 48 \convertnumber{hiragana-iroha}{\currentloopiterator} \fi
+  \NC \convertnumber{katakana}{\currentloopiterator}
+  \NC \ifnum\currentloopiterator < 48 \convertnumber{katakana-iroha}{\currentloopiterator} \fi
+  \NC\NR
+}
+\stoptabulate
+
+\stoptext

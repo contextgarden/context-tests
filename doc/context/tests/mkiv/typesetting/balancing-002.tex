@@ -1,0 +1,76 @@
+\continuewhenlmtxmode
+
+\useMPlibrary[dum]
+
+\setupbodyfont[10pt]
+
+% \tracingmvl    1
+% \tracingonline 2
+
+\starttext
+
+\beginmvl 1
+
+    \dorecurse{10}{
+        \samplefile{tufte}\par
+        \samplefile{ward}\par
+    }
+
+\endmvl
+
+\setbox\scratchboxone \flushmvl 1
+
+\balancetolerance        2000
+\balanceemergencystretch 2\lineheight
+\balancetopskip          0pt plus 2\lineheight
+%balancebottomskip       0pt plus 2\lineheight
+
+% % or:
+%
+% \balancepasses 2
+%     tolerance 200
+% next
+%     tolerance        2000
+%     emergencystretch 2\lineheight
+% \relax
+%
+% \balancebreakpasses1
+
+
+\balanceshape 4
+  vsize   10cm
+  topskip \strutht
+next
+  vsize   15cm
+  topskip \strutht
+next
+  vsize   9cm
+  topskip \strutht
+next
+  vsize   12cm
+  topskip \strutht
+\relax
+
+\setbox\scratchboxtwo\vbalance\scratchboxone trial      % exactly
+
+\doloop {
+    \ifvoid\scratchboxtwo
+      \exitloop
+    \else
+      \ruledhbox{\vbalancedbox\scratchboxtwo}
+      \page
+    \fi
+}
+
+\setbox\scratchboxtwo\vbalance\scratchboxone additional % trial exactly
+
+\doloop {
+    \ifvoid\scratchboxtwo
+      \exitloop
+    \else
+      \ruledhbox{\vbalancedbox\scratchboxtwo}
+      \page
+    \fi
+}
+
+\stoptext

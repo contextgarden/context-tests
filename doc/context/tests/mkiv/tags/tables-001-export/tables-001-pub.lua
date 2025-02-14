@@ -1,0 +1,16 @@
+return {
+ ["htmlfiles"]={ "tables-001-div.html" },
+ ["htmlroot"]="tables-001-div.html",
+ ["identifier"]="d91f2bdf-4773-bf96-bc22-10e7591bfb0b",
+ ["imagefile"]="styles/tables-001-images.css",
+ ["imagepath"]="images",
+ ["images"]={},
+ ["language"]="en",
+ ["metadata"]={},
+ ["name"]="tables-001",
+ ["stylepath"]="styles",
+ ["styles"]={ "tables-001-defaults.css", "tables-001-images.css", "tables-001-fonts.css", "tables-001-styles.css" },
+ ["title"]="tables-001",
+ ["xhtmlfiles"]={ "tables-001-tag.xhtml" },
+ ["xmlfiles"]={ "tables-001-raw.xml" },
+}

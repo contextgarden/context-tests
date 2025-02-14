@@ -1,0 +1,60 @@
+% adapted from mail from list
+
+% We already have margintext:section predefined, therefore the \type {mine:}
+% prefix!
+
+\showframe
+
+\setuplayout
+  [backspace=3cm,
+   margin=2cm,
+   width=middle]
+
+\setuppagenumbering
+  [alternative=doublesided]
+
+\definemargindata
+  [margintext:mine:chapter]
+  [margintext]
+  [width=\outermarginwidth,
+   location=outer,
+   align=flushouter]
+
+\defineheadalternative
+  [margintext:mine:chapter]
+  [margintext]
+  [margintext=margintext:mine:chapter]
+
+\definemargindata[margintext:mine:section]
+  [margintext]
+  [width=\innermarginwidth,
+   location=inner,
+   align=flushinner]
+
+\defineheadalternative
+  [margintext:mine:section]
+  [margintext]
+  [margintext=margintext:mine:section]
+
+\setuphead
+  [chapter]
+  [alternative=margintext:mine:chapter,
+   style=\tf,
+   number=no]
+
+\setuphead
+  [section]
+  [alternative=margintext,
+   style=\tf,
+   number=no]
+
+\starttext
+
+    \chapter{Introduction}
+
+    \dorecurse {15} {
+        \section{Section}
+        \input ward
+    }
+
+\stoptext

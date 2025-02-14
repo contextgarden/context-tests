@@ -1,0 +1,22 @@
+\defineenumeration
+  [theorem]
+  [text=\labeltexts{theorem},
+   style=italic,
+   alternative=serried,
+   width=fit,
+   space=no,
+   prefix=yes]
+
+\setuplabeltext
+  [en]
+  [theorem={{XYZ },{ PQR}}]
+
+\setuphead[chapter][placehead=no]
+
+\startTEXpage[offset=5pt]
+    \startchapter
+        \starttheorem
+            blablabla
+        \stoptheorem
+    \stopchapter
+\stopTEXpage

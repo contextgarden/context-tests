@@ -1,0 +1,39 @@
+% question on list
+
+\starttext
+
+\definedelimitedtext
+  [dextract]
+  [blockquote]
+  [leftmargin=1.5pc,
+   style=italic,
+   before=\setupindenting[next],
+   after=\setups{extract:whatever}]
+
+\definestartstop
+  [extract]
+  [arguments=yes,
+   before=\setups{extract:start},
+   after=\setups{extract:stop}]
+
+\startsetups extract:start
+    \startdextract
+\stopsetups
+
+\startsetups extract:stop
+    \stopdextract
+    \blank[1ex,samepage]
+    \hrule
+    \blank[1ex,samepage]
+    \dontleavehmode
+    \wordright{\itx\startstopparameter{author}}
+\stopsetups
+
+\starttext
+
+\startextract[author=René Descartes]
+    Cogito ergo sum.
+\stopextract
+
+\stoptext
+

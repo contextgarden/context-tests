@@ -1,0 +1,112 @@
+\setupbodyfont[dejavu]
+
+\starttext
+
+\startTEXpage[offset=1ts]
+
+% \startformula \showstruts
+%     \startmatrix
+%         \NC 1         \NC   \NC \GL[2][m,s,h]  \NC 3 \NC \NR
+%         \NC 1         \NC   \NC               \NC 3 \NC \NR
+%         \NC 1         \NC   \NC               \NC 3 \NC \NR
+%         \NC \GL[2][d] \NC 2 \NC \GL[2][s,d,c] \NC 3 \NC \NR
+%     \stopmatrix
+% \stopformula
+
+% \startformula \showstruts
+%     \startmatrix[fences=bracket,rulecolor=red]
+%         \NC 1 \NC \GL[2][a]      \NC \GL[2][a,e] \NC \NR
+%         \NC 1 \NC \GL[2][x,blue] \NC \GL[2][x,e] \NC \NR
+%         \NC 1 \NC 2              \NC 3           \NC \NR
+%         \NC 1 \NC 2              \NC 3           \NC \NR
+%         \NC 1 \NC \GL[2][a]      \NC \GL[2][a,e] \NC \NR
+%     \stopmatrix
+% \stopformula
+
+% \startformula \showstruts
+%     \startmatrix[fences=bracket]
+%         \NC 1 \NC   \NC \GL[2][t] \NC 3 \NC \NR
+%         \NC 1 \NC   \NC           \NC 3 \NC \NR
+%         \NC 1 \NC   \NC           \NC 3 \NC \NR
+%         \NC 1 \NC 2 \NC \GL[2][b] \NC 3 \NC \NR
+%     \stopmatrix
+% \stopformula
+
+% \startformula \showstruts
+%     \startmatrix[fences=bracket,rulecolor=red]
+%         \NC 1 \NC   \NC \GL[2][T] \NC 3 \NC \NR
+%         \NC 1 \NC   \NC           \NC 3 \NC \NR
+%         \NC 1 \NC   \NC           \NC 3 \NC \NR
+%         \NC 1 \NC 2 \NC \GL[2][B] \NC 3 \NC \NR
+%     \stopmatrix
+% \stopformula
+
+% \startformula
+%     \startmatrix[fences=bracket]
+%         \NC \GL[2][h] \NC 2 \NC \GL[2][h]   \NC 3 \NC \NR
+%         \NC           \NC 2 \NC             \NC 3 \NC \NR
+%         \NC           \NC 2 \NC             \NC 3 \NC \NR
+%         \NC \GL[2][d] \NC 2 \NC \GL[2][d,c] \NC 3 \NC \NR
+%     \stopmatrix
+% \stopformula
+
+% \startformula
+%     \startmatrix
+%         \NC \GL[2][h] \NC 2 \NC       \NC \GL[2][h]     \NC             \NC \NR
+%         \NC \GL[3][d] \NC \GL[3][d,e] \NC \NC \GL[2][d] \NC \GL[2][d]   \NC \NR
+%         \NC           \NC 2 \NC       \NC 3             \NC \GL[3][d] \hskip1cm \GL[3][d,e] \NC \NR
+%         \NC \GL[2][d] \NC 2 \NC       \NC 3             \NC \GL[2][d,c] \NC \NR
+%     \stopmatrix
+% \stopformula
+
+% \graphicline[1][o]\input tufte \removeunwantedspaces\graphicline[1][o,e]
+
+% \startformula
+%     \startmatrix[fences=bracket,rulecolor=red]
+%         \NC 1 \NC 2 \VL 3 \NR
+%         \NC 1 \NC 2 \VL 3 \NR
+%     \stopmatrix
+% \stopformula
+
+\startformula
+    \startmatrix[fences=bracket,rulecolor=red]
+        \NC 1 \NC 2 \VL 3 \VL \NR
+        \NC 1 \NC 2 \VL 3 \VL \NR
+    \stopmatrix
+\stopformula
+
+\startformula
+    \startmatrix[fences=bracket,rulecolor=red]
+        \NC 1 \NC 2 \VLT 3 \VLT[2,blue] 4 \NR
+        \NC 1 \NC 2 \NC  3 \NC  4 \NR
+        \NC 1 \NC 2 \VLB 3 \VLB 4 \NR
+    \stopmatrix
+\stopformula
+
+\startformula
+    \startmatrix[fences=bracket,rulecolor=red]
+        \NC 1 \NC 2 \VLT 3 \VLT[2pt,blue] 4 \NR
+        \NC 1 \NC 2 \NC  3 \NC  4 \NR
+        \NC 1 \NC 2 \VLB 3 \VLB 4 \NR
+    \stopmatrix
+\stopformula
+
+\startformula
+    \startmatrix[fences=bracket,rulecolor=red]
+        \NC 1 \NC 2 \VLT[3,blue] 3 \NC         4 \NR
+        \NC 1 \NC 2 \NC          3 \VLT[3,red] 4 \NR
+        \NC 1 \NC 2 \NC          3 \NC         4 \NR
+    \stopmatrix
+\stopformula
+
+\startformula
+    \startmatrix[fences=bracket,rulecolor=red]
+        \NC 1 \NC 2 \NC  3 \NC  4 \NR
+        \NC 1 \NC 2 \NC  3 \VLB 4 \NR
+        \NC 1 \NC 2 \VLB 3 \NC  4 \NR
+    \stopmatrix
+\stopformula
+
+\stopTEXpage
+
+\stoptext

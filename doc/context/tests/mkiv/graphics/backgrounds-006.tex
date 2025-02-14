@@ -1,0 +1,44 @@
+\definetextbackground[b:understroke]  [location=text,alternative=1,background=,frame=off]
+\definetextbackground[b:overstroke]   [location=text,alternative=2,background=,frame=off]
+\definetextbackground[b:exlines]      [location=text,alternative=3,background=,frame=off]
+\definetextbackground[b:strokethrough][location=text,alternative=4,background=,frame=off]
+
+\definestartstop [understroke]
+  [before={\starttextbackground[b:understroke]},
+   after=\stoptextbackground]
+
+\definestartstop
+  [overstroke]
+  [before={\starttextbackground[b:overstroke]},
+   after=\stoptextbackground]
+
+\definestartstop
+  [exlines]
+  [before={\starttextbackground[b:exlines]},
+   after=\stoptextbackground]
+
+\definestartstop
+  [strokethrough]
+  [before={\starttextbackground[b:strokethrough]},
+   after=\stoptextbackground]
+
+\definetextbackground
+  [b:sideline]
+  [mp=mpos:region:sideline,
+   location=paragraph,
+   framecolor=red,
+   frameoffset=5mm]
+
+\definestartstop [sideline]
+  [before={\starttextbackground[b:sideline]},
+   after=\stoptextbackground]
+
+\starttext
+
+    \startunderstroke   \input tufte \stopunderstroke    \blank
+    \startoverstroke    \input tufte \stopoverstroke     \blank
+    \startexlines       \input tufte \stopexlines        \blank
+    \startstrokethrough \input tufte \stopstrokethrough  \blank
+    \startsideline      \input tufte \stopsideline       \blank
+
+\stoptext

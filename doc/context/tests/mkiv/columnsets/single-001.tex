@@ -1,0 +1,54 @@
+\showframe \showgrid
+
+% \enabletrackers[columnsets.*]
+
+\setuplayout
+  [grid=yes,
+   lines=40]
+
+\setupwhitespace
+  [none]
+
+\definecolumnset
+  [parallel]
+  [n=1,
+   align={lesswidows,lessclubs,lessbroken,lessorphans}]
+
+\definesubcolumnset[parallel][L][1]
+\definesubcolumnset[parallel][R][2]
+
+\startsetups balance:example
+    \balancetopskip    \strutht
+    \balancebottomskip \strutdp
+\stopsetups
+
+\setuphead
+  [chapter]
+  [before=\blank[2*line]\testcolumn[5],
+   after=\blank[line,samepage],
+   page=]
+
+\setuppagenumbering
+  [alternative=doublesided]
+
+\starttext
+
+    \page[left]
+
+    \startcolumnset[parallel]
+
+        \dorecurse{20}{
+            \startsubcolumnset[L]
+                \title{Knuth #1}
+                \input{knuth}
+            \stopsubcolumnset
+            \startsubcolumnset[R]
+                \title{Zapf #1}
+                \input{zapf}
+            \stopsubcolumnset
+            \flushsubcolumnsets[spread]
+        }
+
+    \stopcolumnset
+
+\stoptext

@@ -1,0 +1,26 @@
+% Based on mail exchange width WS:
+
+\startTEXpage
+
+    \defineTABLEsetup [math] [style=math]
+
+    \bTABLE[frame=off]
+      \bTR
+        \bTD a \eTD \bTDs[math] + \eTDs
+        \bTD b \eTD \bTDs[math] → \eTDs
+        \bTD c \eTD
+      \eTR
+    \eTABLE
+
+    \setupxtable [math] [foregroundstyle=math]
+
+    \startxtable[frame=off]
+      \startxrow
+        \startxcell a \stopxcell \startxcell[math] + \stopxcell
+        \startxcell b \stopxcell \startxcell[math] → \stopxcell
+        \startxcell c \stopxcell \startxcell \rightarrow \stopxcell
+        \startxcell d \stopxcell
+      \stopxrow
+    \stopxtable
+
+\stopTEXpage

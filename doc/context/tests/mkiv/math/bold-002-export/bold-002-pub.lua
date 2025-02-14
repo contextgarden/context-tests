@@ -1,0 +1,16 @@
+return {
+ ["htmlfiles"]={ "bold-002-div.html" },
+ ["htmlroot"]="bold-002-div.html",
+ ["identifier"]="adf989f7-4b9a-8936-9161-2d06027c5160",
+ ["imagefile"]="styles/bold-002-images.css",
+ ["imagepath"]="images",
+ ["images"]={},
+ ["language"]="en",
+ ["metadata"]={},
+ ["name"]="bold-002",
+ ["stylepath"]="styles",
+ ["styles"]={ "bold-002-defaults.css", "bold-002-images.css", "bold-002-fonts.css", "bold-002-styles.css" },
+ ["title"]="bold-002",
+ ["xhtmlfiles"]={ "bold-002-tag.xhtml" },
+ ["xmlfiles"]={ "bold-002-raw.xml" },
+}

@@ -1,0 +1,23 @@
+\continuewhenlmtxmode
+
+\startbuffer
+\dm{
+  \dorecurse {\nofmathvariants "28} {
+    \char \getmathvariant #1 "28
+    \char \getmathvariant #1 "7B
+    \char \getmathvariant #1 "7C
+    \char \getmathvariant #1 "7D
+    \char \getmathvariant #1 "29 \  }
+}
+\stopbuffer
+
+\startTEXpage[offset=1TS]
+
+\getbuffer
+
+\blank[small]
+
+\switchtobodyfont[modern-nt]
+\getbuffer
+
+\stopTEXpage

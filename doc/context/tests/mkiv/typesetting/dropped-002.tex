@@ -1,0 +1,19 @@
+% derived from example by MS for SE
+
+\setuppapersize[A5,landscape][A5,landscape]
+
+\useMPlibrary[dum]
+\setupinitial[n=2]
+
+\starttext
+
+\startplacefigure
+  [location={right,none,paragraph}]
+  \externalfigure[dummy][width=.25\textwidth]
+\stopplacefigure
+
+\placeinitial \samplefile{ward}
+
+\placeinitial \samplefile{ward}
+
+\stoptext

@@ -1,0 +1,16 @@
+return {
+ ["htmlfiles"]={ "export-008-div.html" },
+ ["htmlroot"]="export-008-div.html",
+ ["identifier"]="a79de1df-4d9e-b3f5-5e2d-bc6ae4d1e72e",
+ ["imagefile"]="styles/export-008-images.css",
+ ["imagepath"]="images",
+ ["images"]={},
+ ["language"]="en",
+ ["metadata"]={},
+ ["name"]="export-008",
+ ["stylepath"]="styles",
+ ["styles"]={ "export-008-defaults.css", "export-008-images.css", "export-008-fonts.css", "export-008-styles.css" },
+ ["title"]="export-008",
+ ["xhtmlfiles"]={ "export-008-tag.xhtml" },
+ ["xmlfiles"]={ "export-008-raw.xml" },
+}

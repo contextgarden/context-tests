@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<!--
+
+    input filename   : tagged-010
+    processing date  : 2025-02-12 00:31:22+01:00
+    context version  : 2025.02.07 20:46
+    exporter version : 0.36
+
+-->
+
+<?xml-stylesheet type="text/css" href="styles/tagged-010-defaults.css" ?>
+<?xml-stylesheet type="text/css" href="styles/tagged-010-images.css" ?>
+<?xml-stylesheet type="text/css" href="styles/tagged-010-fonts.css" ?>
+<?xml-stylesheet type="text/css" href="styles/tagged-010-styles.css" ?>
+<document context="2025.02.07 20:46" date="2025-02-12 00:31:22+01:00" file="tagged-010" language="en" title="tagged-010" version="0.36" xml:lang="en">
+12 45 12345 12.34 12 45 12 45 12 34 12 45 12 45 12 34</document>

@@ -1,0 +1,16 @@
+return {
+ ["htmlfiles"]={ "tagged-003-div.html" },
+ ["htmlroot"]="tagged-003-div.html",
+ ["identifier"]="2665f851-4cb8-bc9c-ec9c-7106ce7095c1",
+ ["imagefile"]="styles/tagged-003-images.css",
+ ["imagepath"]="images",
+ ["images"]={},
+ ["language"]="en",
+ ["metadata"]={},
+ ["name"]="tagged-003",
+ ["stylepath"]="styles",
+ ["styles"]={ "tagged-003-defaults.css", "tagged-003-images.css", "tagged-003-fonts.css", "tagged-003-styles.css" },
+ ["title"]="tagged-003",
+ ["xhtmlfiles"]={ "tagged-003-tag.xhtml" },
+ ["xmlfiles"]={ "tagged-003-raw.xml" },
+}

@@ -1,0 +1,33 @@
+% for Alan:
+
+\showfontkerns \showglyphs
+
+\startluacode
+    fonts.handlers.otf.addfeature {
+        name     = "nokerns",
+        type     = "kern",
+        features = {
+            default = {
+                fra = true,
+            },
+        },
+        data     = {
+            ["L"] = { ["’"] = -300 },
+            ["l"] = { ["’"] = -150 },
+            ["’"] = { ["a"] = -150 },
+        },
+    }
+\stopluacode
+
+\definefontfeature[default][default][nokerns=true]
+
+\definefontfeature[french][script=default,language=fra]
+
+\setupbodyfont [dejavu-condensed,12pt]
+
+\startTEXpage[offset=10pt]
+    L'aire\quad Laire\quad l'aire \crlf
+    \addff{french}
+    L'aire\quad Laire\quad l'aire
+\stopTEXpage
+

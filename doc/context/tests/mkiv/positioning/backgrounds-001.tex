@@ -1,0 +1,49 @@
+
+\definetextbackground[b:r][backgroundcolor=red,frame=off]
+\definetextbackground[b:g][backgroundcolor=green,frame=off]
+\definetextbackground[b:b][backgroundcolor=blue,frame=off]
+\definetextbackground[b:c][backgroundcolor=cyan,frame=off]
+\definetextbackground[b:m][backgroundcolor=magenta,frame=off]
+\definetextbackground[b:y][backgroundcolor=yellow,frame=off]
+
+\setupbodyfont[dejavu,10pt]
+
+\starttext
+
+\startTEXpage[offset=10pt]
+
+\startxtable[region=yes,offset=2mm]
+    \startxrow
+        \startxcell
+            \starttextbackground[b:r]
+                \input ward
+            \stoptextbackground{}
+            \input ward
+            \starttextbackground[b:y]
+                \input ward
+            \stoptextbackground{}
+        \stopxcell
+        \startxcell
+            \starttextbackground[b:g]
+                \input ward
+                \starttextbackground[b:b]
+                    \input ward
+                \stoptextbackground{}
+                \input ward
+            \stoptextbackground{}
+        \stopxcell
+        \startxcell
+            \starttextbackground[b:c]
+                \input ward
+            \stoptextbackground{}
+            \starttextbackground[b:m]
+                \input ward
+            \stoptextbackground{}
+            \input ward
+        \stopxcell
+    \stopxrow
+\stopxtable
+
+\stopTEXpage
+
+\stoptext

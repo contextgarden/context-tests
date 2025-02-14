@@ -1,0 +1,38 @@
+\setupbodyfont[dejavu]
+
+\definestacking[one] % starts at 0xFFFF
+\definestacking[two][number=2]
+
+\starttext
+
+\startuseMPgraphic{test}
+    pickup pencircle scaled 2mm ;
+    draw fullcircle scaled 3cm withcolor darkred  withstacking 1 ;
+    draw fullcircle scaled 2cm withcolor darkblue withstacking 2 ;
+    draw textext("one")   withcolor darkgreen withstacking 11 ;
+    draw textext("two")   withcolor darkgreen withstacking 12 ;
+    draw textext("three") withcolor darkgreen withstacking 13 ;
+    draw fullcircle scaled 1cm withcolor darkgray withnamedstacking "one" ;
+\stopuseMPgraphic
+
+\startTEXpage[offset=.25ts]
+    \useMPgraphic{test}{stacking={1,11}}
+\stopTEXpage
+
+\startTEXpage[offset=.25ts]
+    \useMPgraphic{test}{stacking={2,12}}
+\stopTEXpage
+
+\startTEXpage[offset=.25ts]
+    \useMPgraphic{test}{stacking={1:2,13}}
+\stopTEXpage
+
+\startTEXpage[offset=.25ts]
+    \useMPgraphic{test}{stacking={1:2,one}}
+\stopTEXpage
+
+\startTEXpage[offset=.25ts]
+    \useMPgraphic{test}{stacking={1,two}}
+\stopTEXpage
+
+\stoptext

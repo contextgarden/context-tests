@@ -1,0 +1,25 @@
+\startsetups [userdata:extract]
+    \startnarrower
+        \setupindenting[next]
+        \getuserdata
+        \hairline
+        \dontleavehmode\wordright{\itx\userdataparameter{author}}
+    \stopnarrower
+\stopsetups
+
+\defineuserdataalternative
+  [extract]
+  [renderingsetup=userdata:extract]
+
+\defineuserdata
+  [extract]
+  [style=italic,
+   alternative=extract]
+
+\starttext
+
+\startextract[author=René Descartes]
+    Cogito ergo sum.
+\stopextract
+
+\stoptext

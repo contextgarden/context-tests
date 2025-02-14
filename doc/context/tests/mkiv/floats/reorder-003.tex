@@ -1,0 +1,26 @@
+\setupinteraction[state=start]
+
+\reorderfloats[figure]
+
+\starttext
+    \placelist[figure]
+
+    \blank
+
+    \samplefile{knuthmath}
+    \placefigure[page][one]{PAGE}{\framed{!!!!}}
+    \samplefile{knuthmath}
+    \placefigure[here][two]{HERE}{\framed{!!!!}}
+    \samplefile{knuthmath}
+    \placefigure[page]{PAGE}{\framed{!!!!}}
+    \samplefile{knuthmath}
+    \placefigure[here]{HERE}{\framed{!!!!}}
+    \samplefile{knuthmath}
+    \placefigure[here]{HERE}{\framed{!!!!}}
+    \samplefile{knuthmath}
+
+    \blank
+
+    See \in{page figure}[one] and \in{here figure}[two] too!
+\stoptext
+

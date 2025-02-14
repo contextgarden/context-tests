@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<!--
+
+    input filename   : export-001
+    processing date  : 2025-02-12 00:24:36+01:00
+    context version  : 2025.02.07 20:46
+    exporter version : 0.36
+
+-->
+
+<?xml-stylesheet type="text/css" href="styles/export-001-defaults.css" ?>
+<?xml-stylesheet type="text/css" href="styles/export-001-images.css" ?>
+<?xml-stylesheet type="text/css" href="styles/export-001-fonts.css" ?>
+<?xml-stylesheet type="text/css" href="styles/export-001-styles.css" ?>
+<document context="2025.02.07 20:46" date="2025-02-12 00:24:36+01:00" file="export-001" language="en" title="export-001" version="0.36" xml:lang="en">
+ <formula>
+  <formulacontent image="export-001-image-1" n="1">
+   <math data-lmtx-blob="1" data-lmtx-meaning="integral with upper limit 2 ," display="block" displaystyle="true" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msup>
+   <mo stretchy="true">∫</mo>
+   <mn>2</mn>
+  </msup>
+ </mrow>
+   </math>
+  </formulacontent>
+  </formula>
+<math data-lmtx-blob="2" data-lmtx-meaning="integral with upper limit 2 ," display="inline" displaystyle="false" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mo stretchy="true">∫</mo><mn>2</mn></msup></mrow></math> 
+ <break/>
+<math data-lmtx-blob="3" data-lmtx-meaning="integral with upper limit 2 ," display="inline" displaystyle="false" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mo stretchy="true">∫</mo><mn>2</mn></msup></mrow></math> 
+ <formula>
+  <formulacontent image="export-001-image-2" n="2">
+   <math data-lmtx-blob="4" data-lmtx-meaning="the sum with upper limit 2 ," display="block" displaystyle="true" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msup>
+   <mo stretchy="true">∑</mo>
+   <mn>2</mn>
+  </msup>
+ </mrow>
+   </math>
+  </formulacontent>
+  </formula>
+ <formula>
+  <formulacontent image="export-001-image-3" n="3">
+   <math data-lmtx-blob="5" data-lmtx-meaning="the sum from 1 to 1 , of the fraction of 1 and the fraction of 1 and the fraction of 1 and 1" display="block" displaystyle="true" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msubsup>
+   <mo stretchy="true">∑</mo>
+   <mn>1</mn>
+   <mn>1</mn>
+  </msubsup>
+  <mfrac>
+   <mn>1</mn>
+   <mfrac>
+    <mn>1</mn>
+    <mfrac>
+     <mn>1</mn>
+     <mn>1</mn>
+    </mfrac>
+   </mfrac>
+  </mfrac>
+ </mrow>
+   </math>
+  </formulacontent>
+  </formula>
+ <formula>
+  <formulacontent image="export-001-image-4" n="4">
+   <math data-lmtx-blob="6" data-lmtx-meaning="integral from 2 to infinity , of the nabla 3" display="block" displaystyle="true" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msubsup>
+   <mo stretchy="true">∫</mo>
+   <mn>2</mn>
+   <mi>∞</mi>
+  </msubsup>
+  <mi>∇</mi>
+  <mn>3</mn>
+ </mrow>
+   </math>
+  </formulacontent>
+  </formula>
+ <formula>
+  <formulacontent image="export-001-image-5" n="5">
+   <math data-lmtx-blob="7" data-lmtx-meaning="the sum from 2 to infinity , of the nabla 3" display="block" displaystyle="true" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msubsup>
+   <mo stretchy="true">∑</mo>
+   <mn>2</mn>
+   <mi>∞</mi>
+  </msubsup>
+  <mi>∇</mi>
+  <mn>3</mn>
+ </mrow>
+   </math>
+  </formulacontent>
+ </formula>
+</document>

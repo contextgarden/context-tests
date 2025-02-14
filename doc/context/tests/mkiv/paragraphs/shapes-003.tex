@@ -1,0 +1,57 @@
+%
+% answer to / adaptation of question / answeer to mailing list (garulfoazules.eu)
+%
+
+\continuewhenlmtxmode
+
+\setupbodyfont[11pt]
+
+% taken from mail
+
+\definemeasure [mywidth]      [7cm]
+\definemeasure [mywidtha]     [5cm]
+\definemeasure [myheight]     [\baselineskip*37+\lineskip]
+\definemeasure [myheighta]    [\baselineskip*18+\lineskip]
+\definemeasure [myheightb]    [\baselineskip*25-\lineskip]
+
+% variant using mp option to \startshapedparagraph
+
+\startuseMPgraphic{shape:1}
+    path SavedShape ;
+    numeric mywidth   ; mywidth   := \measure{mywidth};
+    numeric mywidtha  ; mywidtha  := \measure{mywidtha};
+    numeric myheight  ; myheight  := \measure{myheight};
+    numeric myheighta ; myheighta := \measure{myheighta};
+    numeric myheightb ; myheightb := \measure{myheightb};
+    SavedShape := (0,0)                -- (mywidth,0) --
+       (mywidth,myheighta)  -- (mywidtha,myheighta) --
+       (mywidtha,myheightb) -- (mywidth,myheightb) --
+       (mywidth,myheight)   -- (0cm,myheight) -- cycle;
+    build_parshape(SavedShape,0,0,0,\baselinedistance,\strutheight,\strutdepth,\topskip) ;
+\stopuseMPgraphic
+
+\startuseMPgraphic{shape:2}
+    SavedShape := SavedShape shifted (0,-ypart urcorner OverlayBox) ;
+    SavedShape := SavedShape shifted (0,positiony("shape:1")) ;
+    fill SavedShape withcolor red;
+    setbounds currentpicture to OverlayBox;
+\stopuseMPgraphic
+
+\showframe
+
+\defineoverlay[myoverlay][\useMPgraphic{shape:2}]
+
+\setupbackgrounds[text][text][background=myoverlay]
+
+\startsection[title={test}]
+
+\setupalign[verytolerant,stretch]
+
+\startshapedparagraph[mp=shape:1]
+    \hpos{shape:1}{\strut}\samplefile{tufte}
+    \samplefile{tufte}
+\stopshapedparagraph
+
+\stopsection
+
+\stoptext

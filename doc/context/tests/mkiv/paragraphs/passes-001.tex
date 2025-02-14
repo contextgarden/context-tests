@@ -1,0 +1,23 @@
+\continuewhenlmtxmode
+
+\startbuffer
+
+\samplefile{davis}
+
+\adjdemerits5000
+
+\fitnessclasses 9 99 42 12 2 0 2 12 42 99
+
+\blank \samplefile{davis}
+
+\stopbuffer
+
+\setuplayout[tight]
+
+\starttext
+
+\dostepwiserecurse{1}{10}{1}{
+    \start \advance \hsize by -#1cm \getbuffer \page \stop
+}
+
+\stoptext

@@ -1,0 +1,22 @@
+\continuewhenlmtxmode
+
+\starttext
+
+\startMPpage
+     path tt ; tt := lmt_outline [
+         kind = "outline",
+         text = "\definedfont[name:texgyrepagellabold*default]foo f o o",
+     ] xsized 12cm ;
+
+  %  fill tt
+  %     withshademethod "linear"
+  %     withshadedirection down
+  %     withshadecolors (red, blue) ;
+
+     draw tt
+        withpattern image (fill fullcircle scaled 5mm withcolor "darkgreen" ;)
+        withpatternscale (1/200,1/40) ;
+
+\stopMPpage
+
+\stoptext

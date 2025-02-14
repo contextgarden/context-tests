@@ -1,0 +1,26 @@
+\pushoverloadmode
+
+\overloaded\def\chapter#1{\par<h1>#1</h1>\par}
+
+\overloaded\def\bTABLE{\par<table>\crlf}
+\overloaded\def\eTABLE{</table>\par}
+\overloaded\def\bTR{<tr>}
+\overloaded\def\eTR{</tr>\crlf}
+\overloaded\def\bTD{<td>}
+\overloaded\def\eTD{</td>}
+
+\popoverloadmode
+
+\appendtoks  <html><body>  \to \everystarttext
+\prependtoks </body><html> \to \everystoptext
+
+\setupwhitespace[line]
+\setuplayout    [page]
+\setupbodyfont  [tt] % 1pt
+
+\starttext
+    \chapter{First}  \input tufte
+    \chapter{Second} \input tufte
+
+    \bTABLE \bTR \bTD test \eTD \eTR \eTABLE
+\stoptext

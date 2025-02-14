@@ -1,0 +1,43 @@
+\startluacode
+luatex.wrapup (
+    function()
+        --
+        print("saving runtime in foo.txt")
+        io.savedata("foo.txt",statistics.elapsedtime(lua.getruntime()))
+        --
+        local t = {
+            runtime = statistics.elapsedtime(lua.getruntime()),
+            mytime  = statistics.elapsedtime("foo"),
+        }
+        print("saving runtime in foo.lua")
+        table.save("foo.lua",t)
+        --
+    end
+)
+\stopluacode
+
+\starttext
+
+% it's showtime:
+
+runtime : \cldcontext {
+    io.loaddata("foo.txt")
+}
+
+mytime: \cldcontext {
+    ( table.load("foo.lua") or { } ).mytime
+}
+
+% let's waste some time:
+
+\ctxlua{statistics.starttiming("foo")}
+\dorecurse{500}{
+    \glyphxscale\numexpr1000-#1\relax
+    \samplefile{knuthmath}
+    \blank
+}
+\ctxlua{statistics.stoptiming("foo")}
+
+\stoptext
+
+

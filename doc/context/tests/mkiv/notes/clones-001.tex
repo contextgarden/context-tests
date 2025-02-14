@@ -1,0 +1,31 @@
+% answer to question from the list
+
+\setupindenting
+  [yes,small]
+
+\defineconversion
+  [mymix]
+  [a,b,c]
+
+\definenotation
+  [symfootnote]
+  [footnote]
+  [counter=]
+
+\setupnotation
+  [footnote]
+  [align={hz,hanging},
+   indenting={yes,small,next}]
+
+\setupnotation
+  [symfootnote]
+  [align={hz,hanging},
+   indenting={yes,small,next},
+   numberconversion=mymix]
+
+\startdocument
+    This is the first sentence with a footnote.\footnote{This is the first footnote and its mark is "1".}
+    This is the second sentence with a footnote.\symfootnote{This is the second footnote and its mark is "a". }
+    This is the third sentence with a footnote.\footnote{This is the third footnote and its mark is "2". }
+    This is the second sentence with a footnote.\symfootnote{This is the fourth footnote and its mark is "b". }
+\stopdocument

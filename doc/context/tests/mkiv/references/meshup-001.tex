@@ -1,0 +1,35 @@
+\continuewhenlmtxmode
+
+% use with case and often not needed at all .. adds overhead
+
+\setupinteraction[state=start]
+
+% \enabletrackers[nodes.references]
+\enabledirectives[references.meshup]
+
+\starttext
+
+\startTEXpage[offset=1ts]
+    test test \goto{
+        \samplefile{tufte}
+        \goto{THREE}[realpage(3)]
+        \samplefile{tufte}
+    }[realpage(2)] test test
+\stopTEXpage
+\startTEXpage[offset=1ts]
+    \goto{
+        \samplefile{tufte}
+    }[realpage(1)]
+\stopTEXpage
+\startTEXpage[offset=1ts]
+    \goto{
+        \samplefile{tufte}
+    }[realpage(1)]
+\stopTEXpage
+\startTEXpage[offset=1ts]
+    THREE
+\stopTEXpage
+
+\stoptext
+
+

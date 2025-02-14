@@ -1,0 +1,21 @@
+\definemathframed
+  [graymath]
+  [frame=off,
+   location=mathematics,
+ % mathclass=ordinary,
+ % mathstyle=display,
+   background=color,
+   backgroundcolor=gray,
+   backgroundoffset=3pt]
+
+\starttext
+
+\startformula
+    \ln (1+x) = \graymath{x - \frac{x^2}{2}} + \frac{x^3}{3}-\cdots.
+\stopformula
+
+\startformula
+    \scriptstyle \ln (1+x) = \graymath{x - \frac{x^2}{2}} + \frac{x^3}{3}-\cdots.
+\stopformula
+
+\stoptext

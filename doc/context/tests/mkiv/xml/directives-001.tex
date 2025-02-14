@@ -1,0 +1,31 @@
+\startbuffer[test]
+<?xml version='1.0'?>
+<whatever>
+    <p>test 1</p>
+    <?context-tex-directive start ?>
+    <?context-tex-directive red   ?>
+    <p>test 2</p>
+    <?context-tex-directive stop ?>
+    <p>test 3</p>
+</whatever>
+\stopbuffer
+
+\startxmlsetups xml:mysetups
+    \xmlsetsetup{main}{whatever|p}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:mysetups}
+
+\startxmlsetups xml:whatever
+    \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:p
+    \blank
+    \xmlflush{#1}
+    \blank
+\stopxmlsetups
+
+\starttext
+    \xmlprocessbuffer{main}{test}{}
+\stoptext

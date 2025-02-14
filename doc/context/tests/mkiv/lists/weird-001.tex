@@ -1,0 +1,29 @@
+% answer to list (to a question by Bruce)
+
+\def\doPageNumber#1%
+  {%\the\numexpr #1 - 1\relax\ · #1}% #1 is not a number
+   %\the\numexpr \structurelistrealpagenumber - 1\relax\ · #1}
+   \tointeger{\structurelistrealpagenumber - 1} · #1}
+
+\setupcombinedlist[content][list={chapter}]
+
+\setuphead
+  [chapter]
+  [expansion=yes]
+
+\setuplist
+  [chapter]
+  [pagecommand=\doPageNumber]
+
+\starttext
+    \completecontent
+    \page
+    \doloopoverlist
+      {one,two,three,four,five}
+      {
+        \chapter{Title \recursestring}
+        Done!
+        \page
+      }
+\stoptext
+

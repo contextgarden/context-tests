@@ -1,0 +1,15 @@
+% \enableexperiments[fonts.compact]
+
+\definefontfeature[mathextra][mathextra][mathkerns=yes] % already set: mathdimensions=all
+\definefontfeature[mathextra][mathextra][staircase=yes]
+
+\usebodyfont[pagella]
+\usebodyfont[cambria]
+
+\starttext
+    \startTEXpage[offset=10mm]
+        \showglyphs
+        \switchtobodyfont[pagella]$ T_f \quad WHATEVER\quad f_x\quad f(x)$\par
+        \switchtobodyfont[cambria]$ T_f \quad WHATEVER\quad f_x\quad f(x)$\par
+    \stopTEXpage
+\stoptext

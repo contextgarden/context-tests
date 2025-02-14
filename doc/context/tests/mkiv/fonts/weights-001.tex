@@ -1,0 +1,23 @@
+\continuewhenlmtxmode
+
+\definefontfeature[wide]         [extend=2]
+\definefontfeature[wideslant]    [extend=2,slant=.2]
+\definefontfeature[widebold]     [extend=2,weight=.1]
+\definefontfeature[wideboldslant][extend=2,weight=.1,slant=.2]
+
+\definefontfamily[mainface][rm][TeX Gyre Pagella]
+  [tf={style:regular,features:{default,quality,wide}},
+   it={style:regular,features:{default,quality,wideslant}},
+   bf={style:regular,features:{default,quality,widebold}},
+   bi={style:regular,features:{default,quality,wideboldslant}}]
+
+\setupbodyfont
+  [mainface,30pt]
+
+\starttext
+
+\startTEXpage[offset=1ex]
+    a {\it a} {\bf a} {\bi a}
+\stopTEXpage
+
+\stoptext

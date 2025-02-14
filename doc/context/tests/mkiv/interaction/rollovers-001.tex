@@ -1,0 +1,46 @@
+% From example by Pablo to the mailing list. Hyperlinks can have a roll-over but that
+% depends on viewer and in the case of acrobat also on a description. Of course it
+% add overhead (size) and is not that useful in the end. Ideally we should have the
+% option to specify a description but how to interface that ... It's anyway kind of
+% trivial to support. Interestingly is that this is currently not widely handled and
+% some argue that it then cannot be in a distribution (as some other features only
+% supported in commercial viewers).
+
+\setupbodyfont[dejavu]
+
+\setuptagging
+  [state=start]
+
+\setupbackend
+  [format=pdf/ua-2]
+
+% \nopdfcompression
+
+% \disabledirectives[backends.references.descriptions]           % just link
+% \enabledirectives [backends.references.descriptions]           % some detail (some todo)
+% \enabledirectives [backends.references.descriptions=reference] % a bit less
+
+\setupinteraction
+  [state=start,
+   style=,
+   color=,
+   contrastcolor=,
+   display=new]
+
+\protected\def\myurl   #1{\goto{\hyphenatedurl{#1}}[url(#1)]}
+\protected\def\myhref#1#2{\goto{\hyphenatedurl{#1}}[url(#2)]}
+
+\starttext
+
+\startTEXpage[pagestate=start, offset=1em, align=center]
+    {\bfa Hovering Over Links}
+    \blank[1st]
+    \attachment[method=hidden,file={signed-a.pdf}]
+    \goto{An embedded PDF document}[signed-a::]
+    \blank[.5st]
+    \myurl{https://contextgarden.net}
+    \blank[.5st]
+    \myhref{A link to the Garden}{https://contextgarden.net}
+\stopTEXpage
+
+\stoptext
