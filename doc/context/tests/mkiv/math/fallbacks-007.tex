@@ -1,0 +1,13 @@
+\definefontfallback [Math] [dejavusansmono] [0x0660-0x0669] [check=yes,force=yes,offset=digitsnormal]
+
+\setupbodyfont[dejavu,sans]
+
+\starttext
+\startlines
+    1 : \im{3+2=5 \quad \bf 3+2=5} math with fallback
+    2 : {\bf \im{3+2=5 \quad \bf 3+2=5} bold math}
+    3 : {۳ + ۲ = ۵ \bf ۳ + ۲ = ۵ text Indic digits}
+    4 : {3 + 2 = 5 \bf 3 + 2 = 5 text Arabic diigts}
+    5 : \dm{\sum_{i=1}^{8} x^2 = \pi\alpha + e^{-\beta}}
+\stoplines
+\stoptext

@@ -1,0 +1,26 @@
+\setupdirections[bidi=global,method=unicode]
+\definefontfeature[default][arabic]
+\setupbodyfont[dejavu,sans]
+
+\defineenumeration[Theorem]
+\setupenumeration[Theorem][alternative=serried,title=yes,text=قضیه]
+
+\starttext
+
+\startTheorem[title=عنوان]
+    test
+\stopTheorem
+\startTheorem[title=oeps]
+    test
+\stopTheorem
+
+\setupenumeration[Theorem][alternative=serried,title=yes,text=oeps]
+
+\startTheorem[title=عنوان]
+    test
+\stopTheorem
+\startTheorem[title=oeps]
+    test
+\stopTheorem
+
+\stoptext

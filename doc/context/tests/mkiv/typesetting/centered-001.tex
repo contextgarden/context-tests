@@ -1,0 +1,26 @@
+\starttext
+
+\starttexdefinition protected MyCenteredThing#1#2
+  \blank[big]
+  \hbox to \hsize \bgroup
+    \hss
+    \llap{#1}
+    \hkern.5em
+    \strut
+    \sectionmark
+    \hkern.5em
+    \rlap{#2}
+    \hss
+  \egroup
+  \blank[big,samepage]
+\stoptexdefinition
+
+\MyCenteredThing{left}{right}
+
+\samplefile{tufte}
+
+\MyCenteredThing{up}{down under}
+
+\samplefile{tufte}
+
+\stoptext

@@ -1,0 +1,21 @@
+% answer on SE by MS
+
+\defineenumeration[theorem][text=Theorem,style=italic]
+
+\setupenumeration[headcommand=\groupedcommand{}{.},alternative=serried,width=fit]
+
+\defineenumeration[firsttheorem][theorem][before=]
+
+\startTEXpage[offset=5pt]
+ \startitemize
+   \startitem
+     \startfirsttheorem
+       blablabla.
+     \stopfirsttheorem
+     blablabla.
+     \starttheorem
+       blablabla.
+     \stoptheorem
+   \stopitem
+ \stopitemize
+\stopTEXpage

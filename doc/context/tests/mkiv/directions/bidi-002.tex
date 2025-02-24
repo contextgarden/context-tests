@@ -1,0 +1,34 @@
+\starttext
+
+\startplacetable[title={Caption}]
+    \bTABLE
+        \bTR \bTD One \eTD \bTD two \eTD \eTR
+        \bTR \bTD Three \eTD \bTD fourteen \eTD \eTR
+    \eTABLE
+\stopplacetable
+
+\startlinecorrection
+    \framed[width=4cm,align=flushleft]{abc}
+\stoplinecorrection
+
+\startlinecorrection
+    \framed[width=4cm,align=flushleft,height=1cm]{abc}
+\stoplinecorrection
+
+\setupalign[r2l]
+
+\startplacetable[title={Caption}]
+    \bTABLE[direction=reverse]
+        \bTR \bTD One \eTD \bTD two \eTD \eTR
+        \bTR \bTD Three \eTD \bTD fourteen \eTD \eTR
+    \eTABLE
+\stopplacetable
+
+\startplacetable[title={Caption}]
+    \bTABLE[direction=reverse,align=righttoleft]
+        \bTR \bTD One \eTD \bTD two \eTD \eTR
+        \bTR \bTD Three \eTD \bTD fourteen \eTD \eTR
+    \eTABLE
+\stopplacetable
+
+\stoptext
