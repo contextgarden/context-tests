@@ -1,0 +1,61 @@
+\definecomparingtext[first] [color=blue]
+\definecomparingtext[second][color=red]
+\definecomparingtext[third] [color=magenta]
+
+\setuplayout[tight]
+
+\setuplayout
+  [grid=yes,
+   lines=40]
+
+\definecolumnset
+  [comparethem]
+  [n=2,
+   align={lesswidows,lessclubs,lessbroken,lessorphans}]
+
+\definesubcolumnset[comparethem][L][1,3]
+\definesubcolumnset[comparethem][R][2,4]
+
+\starttext
+
+\startcolumnset[comparethem]
+
+\dorecurse{10} {
+
+    \comparetext[first,second]
+
+    \startsubcolumnset[L]
+        \startcomparingtext[first]%
+            the {\it color} of spring and the odor of summer
+        \stopcomparingtext
+    \stopsubcolumnset
+
+    \startsubcolumnset[R]
+        \startcomparingtext[second]%
+            the {\green colour} of spring and the odour of summer
+        \stopcomparingtext
+    \stopsubcolumnset
+
+    \flushsubcolumnsets
+
+    \comparetext[first,third]
+
+    \startsubcolumnset[L]
+        \startcomparingtext[first]%
+            a country that is a pseudo two party democracy
+        \stopcomparingtext
+    \stopsubcolumnset
+
+    \startsubcolumnset[R]
+        \startcomparingtext[third]%
+            quickly becomes a country of destructive idiocracy
+        \stopcomparingtext
+    \stopsubcolumnset
+
+    \flushsubcolumnsets
+
+}
+
+\stopcolumnset
+
+\stoptext

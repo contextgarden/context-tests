@@ -1,0 +1,72 @@
+\startbuffer[test]
+<something>
+    <what samepar="true">
+        one
+    </what>
+    <what>
+        two
+    </what>
+    <what>
+        three
+    </what>
+    <what>
+        four
+    </what>
+</something>
+\stopbuffer
+
+\startxmlsetups xml:mysetups
+    \xmlsetsetup{#1}{something|what}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:mysetups}
+
+\startxmlsetups xml:something
+    \xmlflush{#1}
+\stopxmlsetups
+
+% variant 1:
+
+\startxmlsetups xml:what
+    \doifelse {\xmlattribute{#1}{./preceding-sibling::[-1]}{samepar}} {true} {
+        \removeunwantedspaces
+        \space
+        \xmlflush{#1}
+    } {
+        \bpar
+        \xmlflush{#1}
+        \epar
+    }
+\stopxmlsetups
+
+% variant 2:
+
+\startxmlsetups xml:what
+    \xmldoifelse {#1} {./preceding-sibling::[-1][@samepar='true']} {
+        \removeunwantedspaces
+        \space
+        \xmlflush{#1}
+    } {
+        \bpar
+        \xmlflush{#1}
+        \epar
+    }
+\stopxmlsetups
+
+% variant 3:
+
+\startxmlsetups xml:what
+    \ifxml {#1} {./preceding-sibling::[-1][@samepar='true']}
+        \removeunwantedspaces
+        \space
+        \xmlflush{#1}
+    \else
+        \bpar
+        \xmlflush{#1}
+        \epar
+    \fi
+\stopxmlsetups
+
+\starttext
+    \xmlprocessbuffer{main}{test}{}
+\stoptext

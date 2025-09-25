@@ -1,11 +1,10 @@
 @echo off
 
-REM ~ echo %path%
+rem echo %path%
 
-mtxrun  --generate %1
-context --make en %1
-mtxrun  --script font --reload --force
-mtxrun  --script testsuite --parallel --pattern=**/*.tex --purge %1
+mtxrun  --script testsuite --parallel --pattern=**/*.tex --purge --squid
+REM ~ mtxrun  --script testsuite --parallel --pattern=**/*.tex --purge
+REM ~ mtxrun  --script testsuite --parallel --pattern=**/*.tex --purge --signal=signal
 
 echo.
 echo results:

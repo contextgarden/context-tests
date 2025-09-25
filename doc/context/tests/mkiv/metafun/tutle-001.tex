@@ -1,0 +1,10 @@
+\startMPpage[offset=1TS]
+
+def rphirelative(expr r,phi) = xyrelative (r*cosd(phi),r*sind(phi)) enddef ;
+
+draw (0,0)
+  for i = 1 upto 360 :
+    -- rphirelative (uniformdeviate(5),i)
+  endfor ;
+
+\stopMPpage

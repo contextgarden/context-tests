@@ -1,0 +1,17 @@
+<?xml version='1.0' standalone='yes'?>
+
+<!-- posted on list -->
+
+<ctx:job>
+    <ctx:message>Adding svnhook mode.</ctx:message>
+    <ctx:preprocess/>
+        <ctx:flags>
+            <ctx:flag>nonstopmode</ctx:flag>
+        </ctx:flags>
+        <ctx:process>
+            <ctx:resources>
+                <ctx:mode>svnhook</ctx:mode>
+            </ctx:resources>
+        </ctx:process>
+    <ctx:postprocess/>
+</ctx:job>

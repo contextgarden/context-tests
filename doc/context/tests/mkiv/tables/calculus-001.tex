@@ -1,0 +1,31 @@
+\starttext
+
+\startluacode
+
+function document.AddTwo(a,b)
+    context.starttabulate { "|g{.}|" }
+        context.NC() context("%N",a) context.NC() context.NR()
+        context.NC() context("%N",b) context.NC() context.NR()
+        context.HL()
+        context.NC() context("%N",a+b) context.NC() context.NR()
+    context.stoptabulate()
+end
+
+function document.SubtractTwo(a,b)
+    context.starttabulate { "|g{.}|" }
+        context.NC() context("%N",a) context.NC() context.NR()
+        context.NC() context("%N",b) context.NC() context.NR()
+        context.HL()
+        context.NC() context("%N",a-b) context.NC() context.NR()
+    context.stoptabulate()
+end
+
+\stopluacode
+
+\protected\def\AddTwo     #1#2{\ctxlua{document.AddTwo     ("#1","#2")}}
+\protected\def\SubtractTwo#1#2{\ctxlua{document.SubtractTwo("#1","#2")}}
+
+\AddTwo     {12.34}{567.8}
+\SubtractTwo{567.8}{12.34}
+
+\stoptext

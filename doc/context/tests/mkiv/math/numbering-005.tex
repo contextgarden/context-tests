@@ -1,0 +1,36 @@
+% adapted from a question on SE (September 2025)
+
+\setupinteraction
+  [state=start,
+   focus=standard]
+
+\definereferenceformat
+  [eqref]
+  [left=(,
+   right=),
+   style=normal,
+   color=blue]
+
+\setupformula
+  [numberstate=auto]
+
+\starttext
+
+With \CONTEXT\ we could write maths. Equations can be referenced. For example,
+see \eqref[eqn:famous-emc]. % see \eqref[eqn:def-m].
+
+\startplaceformula[reference=eqn:famous-emc]
+    \startformula
+        E = mc^2
+    \stopformula
+\stopplaceformula
+
+with
+
+\startplaceformula[reference=eqn:def-m]
+    \startformula
+        m = \frac{m_0}{\sqrt{1-\frac{v^2}{c^2}}}
+    \stopformula
+\stopplaceformula
+
+\stoptext

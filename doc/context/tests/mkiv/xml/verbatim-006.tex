@@ -1,0 +1,44 @@
+\startbuffer[test]
+<?xml version="1.0"?>
+<document><pre>
+|   aaa|    bbb  |ccc   |
+|------|---------|------|
+|    1 |     2   | 3    |
+{    4 {     5   { 6    {
+</pre></document>
+\stopbuffer
+
+% &U+7C;   aaa&U+7C;    bbb  &U+7C;ccc   &U+7C;
+% &U+7C;------&U+7C;---------&U+7C;------&U+7C;
+% &U+7C;    1 &U+7C;     2   &U+7C; 3    &U+7C;
+% &U+7B;    4 &U+7B;     5   &U+7B; 6    &U+7B;
+
+\startxmlsetups xml:setup
+  \xmlsetsetup{\xmldocument}{*}{-}
+  \xmlsetsetup{\xmldocument}{document|pre}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:setup}
+
+\startxmlsetups xml:document
+  \startdocument \xmlflush{#1} \stopdocument
+\stopxmlsetups
+
+
+\startxmlsetups xml:pre
+  \startxmldisplayverbatim
+    \setupbodyfont[TextFontIN]
+  % \spaceskip\zeropoint
+    \xmlflushspacewise{#1}
+  \stopxmldisplayverbatim
+\stopxmlsetups
+
+\definefontfamily [TextFontIN] [tt] [Inconsolata]
+
+\usetypescript[TextFont]
+
+\enabletrackers[xml.entities]
+
+\starttext
+  \xmlprocessbuffer{main}{test}{}
+\stoptext

@@ -1,0 +1,47 @@
+\setupinteraction
+  [state=start,
+   focus=standard]
+
+\definereferenceformat
+  [myref]
+  [label=reference:*]
+
+\setuplabeltext
+  [en]
+  [reference:section=Section~,
+   reference:formula=Formula~]
+
+\setuphead
+  [section]
+  [bodypartlabel=]
+
+\setupcounter
+  [formula]
+  [label=]
+
+\defineformula
+  [nice]
+
+\starttext
+
+\startsection
+  [title=Some title,
+   reference=section:some]
+
+See \myref[section:some].
+
+\startformula
+  1 + 1 = 2 \numberhere[eq:one]
+\stopformula
+
+See \myref[eq:one].
+
+\startniceformula
+  3 + 3 = 6 \numberhere[eq:two]
+\stopniceformula
+
+See \myref[eq:two].
+
+\stopsection
+
+\stoptext

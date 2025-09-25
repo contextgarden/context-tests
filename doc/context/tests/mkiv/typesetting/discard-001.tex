@@ -1,0 +1,26 @@
+% solution for a SE question (discard symbol at begin of line)
+
+\starttext
+
+\starttexdefinition protected Item
+    \ifhmode
+        \hskip.5em plus .25em
+        \uleaders
+            \hbox\bgroup
+                \periodcentered
+                \hskip.25em
+            \egroup
+            \hskip0pt
+        \relax
+    \fi
+\stoptexdefinition
+
+\Item This or that!
+\Item More or less!
+\Item Such and so!
+\Item High or low!
+\Item Thick or thin!
+\Item Good or bad!
+\Item Left or right!
+
+\stoptext

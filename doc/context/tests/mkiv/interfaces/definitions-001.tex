@@ -3,22 +3,22 @@
 \enabletrackers[context.trace]
 
 \startluacode
-function OneOptionalOneMandate(optional,mandate)
+local function OneOptionalOneMandate(optional,mandate)
 end
 
-function startOneOptionalOneMandate(optional,mandate)
+local function startOneOptionalOneMandate(optional,mandate)
 end
 
-function stopOneOptionalOneMandate(optional,mandate)
+local function stopOneOptionalOneMandate(optional,mandate)
 end
 
-function OneOptional(optional)
+local function OneOptional(optional)
 end
 
-function OneMandate(mandate)
+local function OneMandate(mandate)
 end
 
-function TwoMandate(mandate_one,mandate_two)
+local function TwoMandate(mandate_one,mandate_two)
 end
 
 interfaces.definecommand {

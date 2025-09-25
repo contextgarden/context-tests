@@ -6,13 +6,13 @@
 \stopMPcode
 
 \startluacode
-    function test(a,b,c)
+    function document.test(a,b,c)
         return table.concat{ a, b, d }
     end
 \stopluacode
 
 \starttyping[option=lua]
-    function test(a,b,c)
+    function document.test(a,b,c)
         return table.concat{ a, b, d }
     end
 \stoptyping

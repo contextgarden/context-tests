@@ -7,15 +7,22 @@
 
 \startluacode
 
-    callbacks.push("find_data_file",function(whaveter)
-        return "whatever"
-    end)
+    if callbacks.push then
 
-    -- If you comment the next line, image inclusion will still work as there is
-    -- checking in the figure handlers but when you ask for an existing image it
-    -- will crash luatex
+        callbacks.push("find_data_file",function(whaveter)
+            return "whatever"
+        end)
 
-    callbacks.pop("find_data_file")
+        -- If you comment the next line, image inclusion will still work as there is
+        -- checking in the figure handlers but when you ask for an existing image it
+        -- will crash luatex
+
+        callbacks.pop("find_data_file")
+
+    else
+        -- We no longer support this because we don't want to be responsible for
+        -- side effects.
+    end
 \stopluacode
 
 % \externalfigure[t:/sources/cow.pdf]

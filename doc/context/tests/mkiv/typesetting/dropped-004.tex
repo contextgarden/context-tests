@@ -1,0 +1,17 @@
+\setuplayout[grid=yes]
+
+\definecolumnset[bt][n=2]
+
+\showgrid \showmakeup[vpenalty]
+
+\starttext
+
+    \startcolumnset[bt]
+        \dorecurse{20}{
+            \placeinitial
+            \samplefile{ward}
+        \par
+        }
+    \stopcolumnset
+
+\stoptext

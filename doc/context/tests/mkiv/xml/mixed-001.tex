@@ -7,11 +7,11 @@
 \xmlregistersetup{xml:test}
 
 \startxmlsetups xml:c
-    \ctxlua{title = "test=" .. xml.filter(lxml.id("#1"),"xml://./attribute(title)") context(title)}
+    \ctxlua{local title = "1 test=" .. xml.filter(lxml.id("#1"),"xml://./attribute(title)") context(title)}
     \par
-    \ctxlua{context("test=") xml.filter(lxml.id("#1"),"./attribute(title)")}
+    \ctxlua{context("2 test=") xml.filter(lxml.id("#1"),"./attribute(title)")}
     \par
-    \ctxlua{context("test=") lxml.att("#1","title")}
+    \ctxlua{context("3 test=") lxml.att("#1","title")}
 \stopxmlsetups
 
 \starttext

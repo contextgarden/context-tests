@@ -1,0 +1,22 @@
+\starttext
+
+% \lastlinewidth % minus [|parinit|parfil][left|right]skip
+% \lastlinecount % can be used to compensate for above
+
+\input ward
+
+\blackrule[width=\lastlinewidth] : \the\lastlinecount
+
+\startnarrower
+
+    \input ward
+
+    \blackrule[width=\lastlinewidth] : \the\lastlinecount
+
+\stopnarrower
+
+\input davis
+
+\blackrule[width=\lastlinewidth] : \the\lastlinecount
+
+\stoptext

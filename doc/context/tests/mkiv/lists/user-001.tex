@@ -1,0 +1,64 @@
+% based on some question by PR on the list
+
+\setupinteraction
+    [state=start]
+
+\definelistalternative
+    [pmcols]
+    [renderingsetup=list:pmcol]
+
+\startsetups [list:pmcol:common]
+    \relax % prevent lookahead
+    [\currentlistentrynumber]
+    \nbsp\nbsp\nbsp
+    \startcurrentlistentrywrapper
+        \currentlistentrypagenumber
+        \narrownobreakspace · \narrownobreakspace
+        \the\numexpr\structurelistuserpagenumber + 1\relax
+    \stopcurrentlistentrywrapper
+\stopsetups
+
+\startsetups [list:pmcol]
+    \ifnum{\structurelistnumber ; 3} = 1\relax
+        \dontleavehmode
+        \rlap {
+            \directsetup{list:pmcol:common}
+        }
+    \orelse\ifnum{\structurelistnumber ; 3} = 2\relax
+        \hfill
+        \directsetup{list:pmcol:common}
+    \else
+        \hfill
+        \llap {
+            \directsetup{list:pmcol:common}
+        }
+        \crlf
+   \fi
+\stopsetups
+
+\definestructureconversionset[rom][n,R]
+
+\setuphead
+    [title]
+    [page=yes]
+
+\setuphead
+    [chapter]
+    [page=even,
+     sectionconversionset=rom]
+
+\starttext
+
+  \placelist
+    [chapter]
+    [alternative=pmcols,criterium=all,interaction=all]
+
+   \page
+
+    \dorecurse {10} {
+        \startchapter[title={Zapf #1}]
+           \samplefile{zapf}
+        \stopchapter
+    }
+
+\stoptext

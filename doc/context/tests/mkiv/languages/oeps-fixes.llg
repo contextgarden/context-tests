@@ -1,0 +1,14 @@
+return {
+ ["name"]="demo",
+ ["options"]={
+  {
+   ["substitutions"]={
+    ["St"]="S|t",
+    ["Th"]="T|h",
+    ["fi"]="f|i",
+    ["st"]="s|t",
+    ["th"]="t|h",
+   },
+  },
+ },
+}

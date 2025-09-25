@@ -1,0 +1,41 @@
+\starttext
+
+\starttexdefinition protected myreals
+    \ifmmode
+        \reals
+    \orelse\iffontchar\font\mathcharslot\reals
+        \char\mathcharslot\reals
+    \else
+        \im{\reals}
+    \fi
+\stoptexdefinition
+
+\starttexdefinition protected myboldreals
+    {
+        \ifmmode
+            \mb\reals
+        \else
+            \bf
+            \iffontchar\font\mathcharslot\reals
+              \char\mathcharslot\reals
+            \else
+              \egroup
+              \im{\mb\reals}
+              \bgroup
+            \fi
+        \fi
+    }
+\stoptexdefinition
+
+\myreals {\myboldreals}
+
+\im {\myreals {\myboldreals}}
+
+\Umathchardef\boldreals
+   \mathcharclass\reals
+   \plusthree % \c_font_fam_mb
+   \mathcharslot\reals
+
+\reals \boldreals
+
+\stoptext

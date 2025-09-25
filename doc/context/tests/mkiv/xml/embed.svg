@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+
+<!-- exported fragment -->
+
+<embed type="image/svg+xml" script="initPicture(-.5,5,-.5,5);path([[0,0],[1,4],[4,4],[3,0],[0,0]]);text([2.5,4],&quot;44&quot;,&quot;above&quot;);text([3.5,2],&quot;44&quot;,&quot;right&quot;);stroke=&quot;red&quot;;fontfill=&quot;red&quot;;line([1,0],[1,4]);text([1,2],&quot;?&quot;,&quot;right&quot;);" src="/javascript/d.svg" width="200" align="middle" height="200"/>

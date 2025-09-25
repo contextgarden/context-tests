@@ -1,10 +1,11 @@
 % Smoke test for pgfplots
 % Compile a simple document with pgfplots to make sure that pgfplots is working
-\usemodule[tikz,pgfplots]
+\usemodule[tikz]
+\usemodule[pgfplots]
 
 \starttext
 \starttikzpicture
 \startaxis
 \addplot{exp(x)};
 \stopaxis
-\stoptikzpicture 
+\stoptikzpicture

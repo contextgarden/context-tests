@@ -1,0 +1,109 @@
+\continuewhenlmtxmode
+
+% use improved vectors
+
+\definefontfeature
+  [default]
+  [default]
+  [expansion=quality,
+   protrusion=quality]
+
+% this fits well the grid
+
+\setupinterlinespace[top=height]
+\setupbodyfont[pagella,9pt]
+
+% a parpass setup
+
+\newinteger\parpassdefaultone
+\parpassdefaultone\parpassidentifier{test}
+
+% setup parpasses
+
+\startsetups align:pass:test
+    \parpasses  5
+        identifier           \parpassdefaultone
+        tolerance            100
+        adjustspacing          0
+        emergencyfactor        0
+        hyphenation            0
+        mathpenaltyfactor  20000
+        orphanlinefactors   4 100 250 500 1000
+        toddlerpenalties    1 options 2 200 50
+    next
+        tolerance            200
+        adjustspacing          3
+        adjustspacingstep      1
+        adjustspacingshrink    5
+        adjustspacingstretch  10
+    next
+        tolerance            300
+        adjustspacing          0
+    next
+        tolerance            200
+        adjustspacing          3
+        adjustspacingshrink   20
+        adjustspacingstretch  40
+    next
+        tolerance            400
+        hyphenation            1
+        extrahyphenpenalty   200
+        adjustspacing          3
+        adjustspacingshrink   30
+        adjustspacingstretch  60
+        emergencystretch       1\bodyfontsize
+        emergencyfactor     1000
+        mathpenaltyfactor   1000
+     \relax
+\stopsetups
+
+\setupalignpass[test]
+
+% possible that these could be different
+
+\startsetups balance:example
+  \balancetopskip \strutht
+  \balancebottomskip \strutdp
+  \balanceemergencystretch 0pt
+  \balanceemergencyshrink 0pt
+  \balanceadjdemerits 0
+  \balancetolerance 10
+  \balancelineheight \lineheight
+\stopsetups
+
+\definecolumnset
+  [example]
+  [n=2,
+   limit=6,
+   setups=balance:example,
+   align={defaultwidows,defaultclubs,defaultbroken}]
+
+\definesubcolumnset[e] %[1,2,3,4]% default
+
+\starttext
+
+\startcolumnset [example]
+
+\startsubcolumnset[e]
+
+\dorecurse {10}{\input tufte \par}
+
+\stopsubcolumnset
+
+% just flushing, no balancing
+
+\flushsubcolumnsets
+
+\startsubcolumnset[e]
+
+\red \dorecurse {7}{\input tufte \par}
+
+\stopsubcolumnset
+
+% here we do balancing
+
+\balancesubcolumnsets
+
+\stopcolumnset
+
+\stoptext
