@@ -1,0 +1,82 @@
+\setuppapersize[A4]
+
+\setupTABLE[frame=off]
+\setupTABLE[column][1][width=.1\textwidth]
+\setupTABLE[column][2][width=.450\textwidth]
+\setupTABLE[column][3][width=.45\textwidth]
+
+\startbuffer[poem]
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI>
+  <text>
+    <body>
+      <lg type="stanza">
+        <lg type="orig">
+          <l>First light touches the closed houses,</l>
+          <l>and the street breathes a pale memory.</l>
+        </lg>
+        <lg type="trans">
+          <l>La première lumière effleure les maisons closes,</l>
+          <l>et la rue respire une mémoire pâle.</l>
+        </lg>
+        <lg type="comm">
+          <l>light] atmospheric motif in the poem.</l>
+          <l>memory] semantic key recurring in several stanzas.</l>
+        </lg>
+      </lg>
+    </body>
+  </text>
+</TEI>
+\stopbuffer
+
+\startxmlsetups xml:main
+    \xmlsetsetup{#1}{*}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:main}
+
+\startxmlsetups xml:TEI
+    \xmlcommand{#1}{text/body/lg[@type='stanza']}{xml:stanza}
+\stopxmlsetups
+
+\startxmlsetups xml:original
+    \language[french]
+    \xmltext{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:translation
+    \language[french]
+    \xmltext{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:comment
+    \footnote{\xmltext{#1}}
+\stopxmlsetups
+
+\startxmlsetups xml:stanza
+\bTABLE
+    \bTR
+        \bTH line \eTH
+        \bTH original \eTH
+        \bTH translation \eTH
+    \eTR
+    \dorecurse {\xmlcount{#1}{./lg[@type='orig']/l}} {
+        \bTR
+            \bTD
+                ##1
+            \eTD
+            \bTD
+                \xmlcommand{#1}{./lg[@type='orig']/l[##1]}{xml:original}
+                \xmlcommand{#1}{./lg[@type='comm']/l[##1]}{xml:comment}
+            \eTD
+            \bTD
+                \xmlcommand{#1}{./lg[@type='trans']/l[##1]}{xml:translation}
+            \eTD
+        \eTR
+    }
+\eTABLE
+\stopxmlsetups
+
+\starttext
+    \xmlprocessbuffer{main}{poem}{}
+\stoptext

@@ -8,8 +8,21 @@
 
 \setuplabeltext
   [en]
-  [reference:section=Section~,
-   reference:formula=Formula~]
+  [theorem=Theorem~,
+   lemma=Lemma~]
+
+\setuplabeltext
+  [en]
+  [reference:section=RefSection~,
+   reference:formula=RefFormula~,
+  %reference:lemma=RefLemma~,
+   reference:theorem=RefTheorem~,
+  ]
+
+% \setuplabeltext
+%   [en]
+%   [reference:section=Section~,
+%    reference:formula=Formula~]
 
 \setuphead
   [section]
@@ -21,6 +34,34 @@
 
 \defineformula
   [nice]
+
+\defineenumeration
+  [theorem]
+  [text=, % Theorem,
+   label=theorem,
+   alternative=serried,
+   width=fit,
+   way=bysection,
+   prefix=yes,
+   prefixsegments=section]
+
+\defineenumeration
+  [lemma]
+  [theorem]
+  [%text=Lemma,
+   label=lemma,
+  ]
+
+% \defineenumeration
+%   [lemma]
+%   [text=Lemma,
+%    label=lemma,
+%    counter=theorem, %yes or no
+%    alternative=serried,
+%    width=fit,
+%    way=bysection,
+%    prefix=yes,
+%    prefixsegments=section]
 
 \starttext
 
@@ -41,6 +82,28 @@ See \myref[eq:one].
 \stopniceformula
 
 See \myref[eq:two].
+
+\starttheorem[reference=lem:testtheorem]
+    Not all \m {y} eat \m {x}.
+\stoptheorem
+
+\startlemma[reference=lem:testlemma]
+    But all \m {x} eat \m {y}.
+\stoplemma
+
+As we see in \myref[lem:testlemma], the situation is fine.
+
+\blank lemmas:\blank
+
+\placelist[lemma][criterium=text]
+
+\blank theorems:\blank
+
+\placelist[theorem][criterium=text]
+
+\blank both:\blank
+
+\placelist[theorem,lemma][criterium=text]
 
 \stopsection
 

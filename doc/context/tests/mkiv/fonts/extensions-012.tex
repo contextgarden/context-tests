@@ -1,0 +1,15 @@
+\startluacode
+    fonts.handlers.otf.addfeature {
+        name = "kern",
+        type = "pair",
+        data = {
+            ["o"] = { [0x364] = { false, { -150, 0, 0, 0 } } },
+        }
+    }
+\stopluacode
+
+\setupbodyfont[ebgaramond]
+
+\startTEXpage[offset=1TS]
+    mswoͤrd
+\stopTEXpage

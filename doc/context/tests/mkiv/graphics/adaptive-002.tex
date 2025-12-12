@@ -1,0 +1,15 @@
+\continuewhenlmtxmode
+
+\starttext
+
+\dorecurse {2} {
+    \setexcept[left] {\strut\red   EXCEPT L#1.1}%
+    \samplefile{tufte}
+    \dorecurse{12}{\setexcept[right]{\strut\blue  EXCEPT R#1.##1}}%
+    \setexcept[left] {\strut\green EXCEPT L#1.2}%
+    \samplefile{tufte}
+    \blank
+    \samplefile{tufte}
+}
+
+\stoptext

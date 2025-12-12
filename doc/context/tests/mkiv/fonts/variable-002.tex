@@ -1,0 +1,25 @@
+% composite glyphs (2 or more components)
+
+\definefontfeature [fntubuntfa] [default]
+\definefontfeature [fntubuntfb] [default] [axis={wght=300,wdth=75}]
+\definefontfeature [fntubuntfc] [default] [axis={wght=600,wdth=75}]
+\definefontfeature [fntubuntfd] [default] [axis={wght=300,wdth=150}]
+\definefontfeature [fntubuntfe] [default] [axis={wght=300,wdth=100}]
+\definefontfeature [fntubuntff] [default] [axis={wght=600,wdth=150}]
+
+\showglyphs
+
+\startbuffer
+    \char"C9 ÄoöÖöÜüą\char616\char8529
+\stopbuffer
+
+\startTEXpage[offset=1ts]
+    \startlines[before=,after=]
+        \definedfont[file:UbuntuSansVariable.ttf*fntubuntfa]\inlinebuffer
+        \definedfont[file:UbuntuSansVariable.ttf*fntubuntfb]\inlinebuffer
+        \definedfont[file:UbuntuSansVariable.ttf*fntubuntfc]\inlinebuffer
+        \definedfont[file:UbuntuSansVariable.ttf*fntubuntfd]\inlinebuffer
+        \definedfont[file:UbuntuSansVariable.ttf*fntubuntfe]\inlinebuffer
+        \definedfont[file:UbuntuSansVariable.ttf*fntubuntff]\inlinebuffer
+    \stoplines
+\stopTEXpage

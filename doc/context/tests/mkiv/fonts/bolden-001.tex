@@ -1,0 +1,54 @@
+
+% engine=luatex
+
+% luatex     : 2.59
+% luametatex : 0.42
+
+\starttext
+
+\ifcase\contextlmtxmode
+
+    % Using \starteffect ... \stopeffect is likely more efficient here.
+
+    \starttexdefinition LooksOkay #1
+        \startTEXpage[offset=10ex]
+            \startsimplecolumns[n=3]
+                \dostepwiserecurse{0}{1000}{10}{
+                    \begingroup
+                        \edef\FOO{\withoutpt{\the\dimexpr\recurselevel pt/1000\relax}}
+                        \definefontfeature[xx][default][effect={width=\FOO}]
+                        \definedfont[file:#1*xx]
+                        \dontleavehmode
+                        \llap{\ttxx\recurselevel\quad}
+                        yyyyyyyyy\par
+                    \endgroup
+                }
+            \stopsimplecolumns
+        \stopTEXpage
+    \stoptexdefinition
+
+\else
+
+    \starttexdefinition LooksOkay #1
+        \startTEXpage[offset=4TS]
+            \definedfont[file:#1]
+            \startcolumns[n=3]
+                \dostepwiserecurse{0}{1000}{10}{
+                    \begingroup
+                        \dontleavehmode
+                        \llap{\ttxx\recurselevel\quad}
+                        \glyphweight\recurselevel\relax
+                        yyyyyyyyy\par
+                    \endgroup
+                }
+            \stopcolumns
+        \stopTEXpage
+    \stoptexdefinition
+
+\fi
+
+\LooksOkay {jackwritethin.ttf}
+\LooksOkay {jackwrite.ttf}
+\LooksOkay {jackwritebold.ttf}
+
+\stoptext

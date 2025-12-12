@@ -1,0 +1,31 @@
+\usemodule[json]
+
+\starttext
+
+\startluacode
+    local t = {
+        a = {
+            b = {
+                c = "here",
+            }
+        },
+        b = "there",
+        d = { 1, 2, 3, 4 },
+    }
+
+    utilities.tablestore.load("crap",t)
+
+    io.savedata("oeps.json",utilities.json.tojson(t))
+\stopluacode
+
+\tablefield {crap}{a.b.c}
+\tablefield {crap}{b}
+\tablelength{crap}{d}
+
+\loadtable[whatever][oeps.json]
+
+\tablefield {whatever}{a.b.c}
+\tablefield {whatever}{b}
+\tablelength{whatever}{d}
+
+\stoptext

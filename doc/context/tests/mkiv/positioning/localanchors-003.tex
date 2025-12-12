@@ -1,11 +1,22 @@
 \continuewhenlmtxmode
 
+% \unprotect \pushoverloadmode
+% \protect
+
 \starttext
 
 \startoverlayMPgraphic{mp:whatever-6}
     fill OverlayBox withcolor "darkgray" ;
-    draw matrixbox (1, 1) (2, 1) enlarged OverlayOffset shifted paired(OverlayOffset) withpen pencircle scaled 1pt withcolor "blue" ;
-    draw matrixbox (2, 2) (4, 4) enlarged OverlayOffset shifted paired(OverlayOffset) withpen pencircle scaled 1pt withcolor "red" ;
+    draw matrixbox (1, 1) (2, 1)
+        shifted paired(OverlayOffset)
+        withpen pencircle scaled 1pt
+        withcolor "blue"
+    ;
+    draw matrixbox (2, 2) (4, 4)
+        shifted paired(OverlayOffset)
+        withpen pencircle scaled 1pt
+        withcolor "red"
+    ;
 \stopoverlayMPgraphic
 
 \framed
@@ -16,6 +27,7 @@
    backgroundoffset=.5ex,
    foregroundcolor=white]
   {\setmathmatrixanchoring[yes]% left|right|both|yes
+  \showboxes
    \startmathmatrix
       \NC a_1 \NC a   \NC b   \NC c\NR
       \NC a_2 \NC a   \NC b   \NC c\NR
@@ -24,6 +36,8 @@
       \NC a_5 \NC a   \NC b   \NC c\NR
       \NC a_6 \NC a   \NC b   \NC c\NR
   \stopmathmatrix}
+
+% \stoptext
 
 % \blank
 
@@ -93,6 +107,7 @@
    background=mp:whatever-7,
    foregroundcolor=white]
   {\setmathmatrixanchoring[both]%
+  \showboxes
    \startmathmatrix
       \NC a \NC   \NC \quad \NC b \NC   \NR
       \NC   \NC c \NC \quad \NC   \NC   \NR
@@ -103,6 +118,8 @@
   \stopmathmatrix}
 
 \blank
+
+\stoptext
 
 \startoverlayMPgraphic{whatever-9}
     fill anchorspan (1, 1) (1, 3) withcolor "blue" ;

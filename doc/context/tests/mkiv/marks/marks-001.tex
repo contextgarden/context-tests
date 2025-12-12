@@ -83,14 +83,6 @@
     \getmarking[chapter][1][first:nocheck]
 \stopsetups
 
-\definecolumnset[demo]
-
-\startcolumnset[demo]
-    \chapter{Columnset}
-    \input tufte \par
-    \input zapf \par
-\stopcolumnset
-
 \page
 
 \startcolumns
@@ -98,5 +90,26 @@
     \input tufte \par
     \input zapf \par
 \stopcolumns
+
+\page
+
+\setuplayout
+  [grid=yes]
+
+\showgrid
+
+\setuphead
+  [chapter]
+  [page=,
+   before=,
+   after=\blank]
+
+\definecolumnset[demo]
+
+\startcolumnset[demo]
+    \chapter{Columnset}
+    \input tufte \par
+    \input zapf \par
+\stopcolumnset
 
 \stoptext

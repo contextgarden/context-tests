@@ -1,0 +1,35 @@
+% posted on the mailing list
+
+\setupinteraction
+  [state=start]
+
+\setuptagging
+  [state=start]
+
+\setuppapersize
+  [A6]
+
+\setupnote
+  [endnote]
+  [location=text]
+
+\definelabel
+  [Q]
+
+\starttext
+
+\startbuffer[fn:1]
+    \Q\ should be 3, then 4, then 5
+\stopbuffer
+
+\Q\
+something\endnote{\getbuffer[fn:1]}
+something\endnote{\getbuffer[fn:1]}
+something\endnote{\getbuffer[fn:1]}
+
+\Q\
+should be label 2 \footnote{also}
+
+\placenotes[endnote]
+
+\stoptext

@@ -1,0 +1,22 @@
+\setuphyphenation
+    [method=traditional]
+
+\registerhyphenationexception
+    [en]
+    [schweig-häu-ser schweig-hau-ßer schweig-hau-ser]
+
+% \startexceptions[en]
+%     schweig-häu-ser
+%     schweig-hau-ßer
+%     schweig-hau-ser
+% \stopexceptions
+
+\starttext
+
+\starttext
+    \startTEXpage[offset=1em]
+        \hyphenatedword{Schweighäuser}\\
+        \hyphenatedword{Schweighaußer}\\
+        \hyphenatedword{Schweighauser}\\
+    \stopTEXpage
+\stoptext

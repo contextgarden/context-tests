@@ -3,7 +3,7 @@
 \definefontfeature[wide]         [extend=2]
 \definefontfeature[wideslant]    [extend=2,slant=.2]
 \definefontfeature[widebold]     [extend=2,weight=.1]
-\definefontfeature[wideboldslant][extend=2,weight=.1,slant=.2]
+\definefontfeature[wideboldslant][extend=2,weight=.1,slant=0.2]
 
 \definefontfamily[mainface][rm][TeX Gyre Pagella]
   [tf={style:regular,features:{default,quality,wide}},
@@ -14,10 +14,10 @@
 \setupbodyfont
   [mainface,30pt]
 
-\starttext
+\starttext \showglyphs
 
 \startTEXpage[offset=1ex]
-    a {\it a} {\bf a} {\bi a}
+    a {\it b} {\bf c} {\bi d}
 \stopTEXpage
 
 \stoptext

@@ -1,0 +1,82 @@
+% Just in case someone runs into this thread on the luatex lists and thinks that
+% the proposed (latex) solution there is a good idea, we show a solution here. This
+% is rather old stuff, so maybe some day I'll add some 'getanchor' helper to the
+% then lmtx version because of course we can't touch the generic code.
+
+\startluacode
+    fonts.handlers.otf.addfeature {
+        name     = "liga",
+        type     = "chainsubstitution",
+        overload = false,
+        files    = {
+            "ebgaramond-regular.otf",
+            "ebgaramond-bold.otf",
+            "ebgaramond-italic.otf",
+            "ebgaramond-bolditalic.otf",
+        },
+        lookups  = {
+            {
+                type = "substitution",
+                data = {
+                    ["i"] = "ı",
+                },
+            },
+        },
+        data     = {
+            rules = {
+                {
+                    current = { { "i" } },
+                    after   = { { 0x301, 0x364 } },
+                    lookups = { 1 },
+                },
+            },
+        },
+    }
+    fonts.handlers.otf.addfeature {
+        name     = "kern",
+        type     = "pair",
+        overload = false,
+        files    = {
+            "ebgaramond-regular.otf",
+            "ebgaramond-bold.otf",
+         -- "ebgaramond-italic.otf",
+         -- "ebgaramond-bolditalic.otf",
+        },
+        data     = {
+            ["ı"] = { [0x364] = { false, {  -40, -20, 0, 0 } } },
+            ["o"] = { [0x364] = { false, { -150, -20, 0, 0 } } },
+            ["u"] = { [0x364] = { false, { -180, -20, 0, 0 } } },
+            ["a"] = { [0x364] = { false, { -120, -20, 0, 0 } } },
+        }
+    }
+    fonts.handlers.otf.addfeature {
+        name     = "kern",
+        type     = "pair",
+        overload = false,
+        files    = {
+            "ebgaramond-italic.otf",
+            "ebgaramond-bolditalic.otf",
+        },
+        data     = {
+            ["ı"] = { [0x364] = { false, {  -40, -20, 0, 0 } } },
+            ["o"] = { [0x364] = { false, { -120, -20, 0, 0 } } }, -- a bit less
+            ["u"] = { [0x364] = { false, { -180, -20, 0, 0 } } },
+            ["a"] = { [0x364] = { false, { -120, -20, 0, 0 } } },
+        }
+    }
+\stopluacode
+
+\setupbodyfont[ebgaramond]
+
+\def\test#1%
+  {\bgroup#1\relax
+     hí\char"301 p hı\char"301 p hu\char"301 p ha\char"301 p ho\char"301 p\par
+     hi\char"364 p hı\char"364 p hu\char"364 p ha\char"364 p ho\char"364 p\par
+   \egroup}
+
+\startTEXpage[offset=.5ts]
+    \test\tf
+    \test\bf
+    \test\it
+    \test\bi
+\stopTEXpage

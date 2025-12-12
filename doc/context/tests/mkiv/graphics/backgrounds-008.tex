@@ -1,0 +1,47 @@
+\startuseMPgraphic{mpos:region:kind:x}
+    for i=1 upto nofmultipars :
+        fill multipars[i]
+            withcolor
+                if      multikind[i] = "single" : .5[yellow,white]
+                elseif  multikind[i] = "first"  : .5[red,white]
+                elseif  multikind[i] = "middle" : .5[green,white]
+                elseif  multikind[i] = "last"   : .5[blue,white]
+                fi
+        ;
+    endfor ;
+    for i=1 upto nofmultipars :
+        if (multikind[i] = "first") or (multikind[i] = "middle") :
+            draw textext.lft("more to come")
+                shifted lrcorner multipars[i]
+                shifted (0,-StrutDepth-.5ExHeight)
+        fi ;
+        if (multikind[i] = "middle") or (multikind[i] = "last") :
+            draw textext.rt("follow up")
+                shifted ulcorner multipars[i]
+                shifted (0, StrutHeight+.5ExHeight)
+        fi ;
+    endfor ;
+\stopuseMPgraphic
+
+\setuptextbackground
+  [mp=mpos:region:kind:x,
+   method=mpos:region]
+
+\setupbodyfont[dejavu,10pt]
+
+\definetextbackground
+ [myregion]
+
+\setuptextbackground
+ [myregion]
+ [location=paragraph]
+
+\starttext
+
+    \starttextbackground[myregion]
+    \dorecurse{30}{
+        \samplefile{ward}
+    }
+    \stoptextbackground
+
+\stoptext

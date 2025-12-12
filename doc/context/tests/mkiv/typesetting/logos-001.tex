@@ -1,0 +1,12 @@
+\setupbodyfont[pagella]
+
+\def\Test#1{{Test \eTeX\ Some \pdfeTeX\ Logos} (#1)}
+
+\startTEXpage[offset=1ts,strut=no]
+  \startlines[before=,after=]
+                \Test{no caps}
+    {\smallcaps \Test{real smallcaps}}
+    \fsc       {\Test{emulated small caps}}
+    \cap       {\Test{pseudo small caps}}
+  \stoplines
+\stopTEXpage

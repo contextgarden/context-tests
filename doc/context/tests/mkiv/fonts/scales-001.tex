@@ -1,0 +1,7 @@
+\starttext
+    \dostepwiserecurse {1000} {1} {-1} {
+        \dontleavehmode\glyphscale#1\relax
+        \samplefile{tchaikovsky}
+        \removeunwantedspaces\space
+    }
+\stoptext

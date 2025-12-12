@@ -1,0 +1,12 @@
+\setupexternalfigures
+  [directory=t:/sources]
+
+\defineexternalfigure
+  [myilf]
+  [height=lh,
+   frame=on,
+   location=depth]
+
+\starttext
+    test {\showstruts\strut} \externalfigure[cow.pdf][myilf] test
+\stoptext

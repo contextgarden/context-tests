@@ -1,0 +1,24 @@
+% I saw a question about kerning between different instances at stack exchange and
+% remembered that we had this rather old solution for it. Beware, that font has a
+% limited glyph set, e.g. no digits. Also, these features could have used the init
+% and fina features which gives a more natural input. In fact, one can just
+% implement these features runtime but given the limited repertoire this font is
+% not widely useable and therefore a bit of manual work is less of a problem.
+
+\startTEXpage[offset=1ts]
+
+  % \setextrafontkerns[max]
+  % \setextrafontkerns[min]
+    \setextrafontkerns[mixed]
+
+    \definedfont[honoria-regular.otf*default] \showfontkerns
+
+    \definefontfeature[initialswash][cv01=yes]
+    \definefontfeature[finalswash]  [cv02=yes]
+
+    \startlines[before=,after=]
+        {\addff{initialswash}B}ARRY
+        BARR\addff{finalswash}{Y}
+    \stoplines
+
+\stopTEXpage
